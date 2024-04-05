@@ -1,7 +1,7 @@
 {
-  "title": "Builder.io + Shopify + Next.js",
-  "titleTemplate": "%s - Headless Demo",
-  "description": "A starter kit demo store for using headless shopify with Builder.io ->  https://github.com/BuilderIO/nextjs-shopify",
+  "title": "Aisling Duval's personal website - vtuber homepage - aislingvt",
+  "titleTemplate": "%s - Aisling's personal website!",
+  "description": "Aisling Duval's personal website - vtuber homepage - aislingvt",
   "openGraph": {
     "type": "website",
     "locale": "en_IE",

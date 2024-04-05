@@ -34,11 +34,11 @@ const Navbar: FC = () => {
 
   return (
     <React.Fragment>
-      <BuilderComponent
+      {/* <BuilderComponent
         content={announcement}
         data={{ theme }}
         model="announcement-bar"
-      />
+      /> */}
       <Box
         as="header"
         sx={{
@@ -49,7 +49,7 @@ const Navbar: FC = () => {
           display: 'flex',
           justifyContent: 'space-between',
           alignItems: 'center',
-          position: 'relative',
+          position: 'sticky',
         }}
       >
         <Box

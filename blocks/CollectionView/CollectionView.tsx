@@ -68,6 +68,13 @@ const CollectionPreview: FC<Props> = ({
       <Box sx={{ p: 5 }}>
         <ProductGrid {...productGridOptions} products={products} />
       </Box>
+      asdasdduyhnu2h
+      <iframe
+        sandbox="allow-same-origin allow-scripts allow-popups allow-forms"
+        src={`https://streamelements.com/aislingvt/tip`}
+        title="Donation"
+        id="Donation"
+      ></iframe>
     </Box>
   )
 }

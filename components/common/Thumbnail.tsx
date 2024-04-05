@@ -21,22 +21,25 @@ const Thumbnail: React.FC<ThumbnailProps> = ({
   height,
 }) => {
   return (
-    <button
-      name={name}
-      sx={{
-        cursor: 'pointer',
-        border: '1px solid gray',
-        padding: 1,
-        '&:focus': {
-          outline: 'none',
-          borderColor: 'black',
-        },
-      }}
-      onMouseOver={onHover}
-      onClick={onClick}
-    >
-      <Image src={src} width={width} height={height} loading="eager" />
-    </button>
+    <>
+      <button
+        name={name}
+				title={name}
+        sx={{
+          cursor: 'pointer',
+          border: '1px solid gray',
+          padding: 1,
+          '&:focus': {
+            outline: 'none',
+            borderColor: 'black',
+          },
+        }}
+        onMouseOver={onHover}
+        onClick={onClick}
+      >
+        <Image src={src} width={width} height={height} loading="eager" />
+      </button>
+    </>
   )
 }
 
