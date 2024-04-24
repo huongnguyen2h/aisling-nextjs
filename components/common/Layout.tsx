@@ -17,6 +17,11 @@ import themesMap from '@config/theme'
 import seoConfig from '@config/seo.json'
 import NoSSR from './NoSSR'
 
+import ReactDOMServer from 'react-dom/server'
+
+import _ from 'lodash'
+// const _ = ''
+
 const FeatureBar = dynamic(() => import('@components/common/FeatureBar'), {
   ssr: false,
 })
@@ -25,6 +30,8 @@ const Layout: React.FC<{ pageProps: any; children: React.ReactNode }> = ({
   children,
   pageProps,
 }) => {
+  console.log('Layout children: ', _.cloneDeep(children))
+
   const builderTheme = pageProps.theme
   return (
     <CommerceProvider {...shopifyConfig}>
@@ -52,6 +59,21 @@ const Layout: React.FC<{ pageProps: any; children: React.ReactNode }> = ({
     </CommerceProvider>
   )
 }
+const ChildElement = (childComponents: any) => {
+	console.log('childComponents: ', childComponents);
+	
+  return (
+    <>
+      {/* <div>
+				childComponents
+				</div> */}
+    </>
+  )
+}
+
+const onClickHndlr = (e: any) => {
+	return e
+}
 
 const InnerLayout: React.FC<{
   themeName: string
@@ -64,6 +86,28 @@ const InnerLayout: React.FC<{
     muted?: string
   }
 }> = ({ themeName, children, colorOverrides }) => {
+	let RenderedChildren: any
+  try {
+		const childrenElement = React.createElement(ChildElement, 
+			{ 
+				onClickHndlr: onClickHndlr
+			}, [children])
+			// const childrenElement = (<div></div>)
+			console.log('childrenElement: ', childrenElement);
+			
+  	RenderedChildren = ReactDOMServer.renderToString(childrenElement)
+		console.log('InnerLayout children: ', RenderedChildren)
+		RenderedChildren = RenderedChildren.children[0]
+  // const RenderedChildren = ReactDOMServer.renderToString(
+  //   <>
+  //     <ChildElement>{children}</ChildElement>
+  //   </>
+  // )
+  } catch (error) {
+  	console.log(error);
+		RenderedChildren = <>dicks</>
+
+  }
   const theme = {
     ...themesMap[themeName],
     colors: {
@@ -85,7 +129,19 @@ const InnerLayout: React.FC<{
           minHeight: 800,
         }}
       >
-        <main>{children}</main>
+        {/* <iframe
+          width="1045"
+          height="588"
+          src="https://www.youtube.com/embed/Frejv8ydgEQ?autoplay=1&loop=1"
+          // src="https://www.youtube.com/embed/CjICgm2aT9o?list=PLWZyHUkTtlKz4CUUbX24vSpsACmx8I-0v&autoplay=1&loop=1"
+          title="🔴 I&#39;M COLLABING WITH FAMOUS EU4 YOUTUBERS!  ⸜(｡˃ ᵕ ˂ )⸝♡ 【EU4 Live Multiplayer】"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+          referrerPolicy="strict-origin-when-cross-origin"
+          allowFullScreen
+        ></iframe> */}
+				{RenderedChildren}
+        {/* <RenderedChildren></RenderedChildren> */}
+        {/* <main>{children}</main> */}
       </div>
 
       <Sidebar
