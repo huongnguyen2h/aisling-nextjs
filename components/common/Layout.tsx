@@ -32,7 +32,8 @@ const Layout: React.FC<{ pageProps: any; children: React.ReactNode }> = ({
 }) => {
   console.log('Layout children: ', _.cloneDeep(children))
 
-  const builderTheme = pageProps.theme
+  // const builderTheme = pageProps.theme
+  let builderTheme: any
   return (
     <CommerceProvider {...shopifyConfig}>
       <BuilderContent content={builderTheme} modelName="theme">
@@ -60,19 +61,17 @@ const Layout: React.FC<{ pageProps: any; children: React.ReactNode }> = ({
   )
 }
 const ChildElement = (childComponents: any) => {
-	console.log('childComponents: ', childComponents);
-	
+  console.log('ChildElement: ', childComponents)
+
   return (
     <>
-      {/* <div>
-				childComponents
-				</div> */}
+      <div>{childComponents.children}</div>
     </>
   )
 }
 
 const onClickHndlr = (e: any) => {
-	return e
+  return e
 }
 
 const InnerLayout: React.FC<{
@@ -86,27 +85,33 @@ const InnerLayout: React.FC<{
     muted?: string
   }
 }> = ({ themeName, children, colorOverrides }) => {
-	let RenderedChildren: any
+  let RenderedChildren: any
   try {
-		const childrenElement = React.createElement(ChildElement, 
-			{ 
-				onClickHndlr: onClickHndlr
-			}, [children])
-			// const childrenElement = (<div></div>)
-			console.log('childrenElement: ', childrenElement);
-			
-  	RenderedChildren = ReactDOMServer.renderToString(childrenElement)
-		console.log('InnerLayout children: ', RenderedChildren)
-		RenderedChildren = RenderedChildren.children[0]
-  // const RenderedChildren = ReactDOMServer.renderToString(
-  //   <>
-  //     <ChildElement>{children}</ChildElement>
-  //   </>
-  // )
-  } catch (error) {
-  	console.log(error);
-		RenderedChildren = <>dicks</>
+    const childrenElement = React.createElement(
+      ChildElement,
+      {
+        onClickHndlr: onClickHndlr,
+      },
+      [children]
+    )
+    // const childrenElement = (<div></div>)
+    console.log('childrenElement: ', childrenElement)
 
+    // RenderedChildren = ReactDOMServer.renderToString(
+    //   _.cloneDeep(childrenElement.props.children[0])
+    // )
+    console.log('InnerLayout children: ', RenderedChildren)
+    RenderedChildren = (
+      <ChildElement>{childrenElement.props.children[0]}</ChildElement>
+    )
+    // const RenderedChildren = ReactDOMServer.renderToString(
+    //   <>
+    //     <ChildElement>{children}</ChildElement>
+    //   </>
+    // )
+  } catch (error) {
+    console.log(error)
+    RenderedChildren = <>dicks</>
   }
   const theme = {
     ...themesMap[themeName],
@@ -139,7 +144,7 @@ const InnerLayout: React.FC<{
           referrerPolicy="strict-origin-when-cross-origin"
           allowFullScreen
         ></iframe> */}
-				{RenderedChildren}
+        {RenderedChildren}
         {/* <RenderedChildren></RenderedChildren> */}
         {/* <main>{children}</main> */}
       </div>

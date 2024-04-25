@@ -46,7 +46,8 @@ export default function MyApp({ Component, pageProps }: AppProps) {
  
   return (
     <Layout pageProps={pageProps}>
-      <Component {...pageProps} />
+     this is the about page
+      {/* <Component {...pageProps} /> */}
     </Layout>
   )
 }

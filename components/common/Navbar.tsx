@@ -32,6 +32,10 @@ const Navbar: FC = () => {
     fetchContent()
   }, [cart?.lineItems])
 
+  console.log('navigationLinks: ', navigationLinks);
+  
+  
+
   return (
     <React.Fragment>
       {/* <BuilderComponent
