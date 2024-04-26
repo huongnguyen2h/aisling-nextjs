@@ -1,0 +1,4 @@
+.layout-main {
+ @include transition(margin-left $transitionDuration);
+ // @include combineBreakPointUnit(padding-left, px, 30, 41, 52, 65, 75, 90);
+}

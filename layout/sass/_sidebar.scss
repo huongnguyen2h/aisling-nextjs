@@ -1,0 +1,120 @@
+.layout-sidebar {
+ position: fixed;
+ width: $layoutMenuWidth;
+ height: 100%;
+ top: 0;
+ z-index: 1001;
+ overflow-y: auto;
+ user-select: none;
+ -moz-user-select: none;
+ -webkit-user-select: none;
+ @include transition(left $transitionDuration);
+ display: flex;
+ flex-direction: column;
+ justify-content: space-between;
+ //@include shadow(0 0 6px 0 rgba(0, 0, 0, 0.16));
+
+ .layout-menu {
+  a {
+   white-space: nowrap;
+  }
+  & span {
+   margin-left: 5px !important ;
+   white-space: nowrap;
+  }
+
+  li {
+  }
+ }
+
+ .layout-logo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+  height: 88px;
+  @include combineBreakPointUnit(
+   height,
+   px,
+   $navbarHeight1,
+   $navbarHeight2,
+   $navbarHeight3,
+   $navbarHeight4,
+   $navbarHeight5,
+   $navbarHeight6
+  );
+  border-right: 1px solid $borderColor;
+  //margin-top: 24px;
+  //margin-bottom: 10px;
+
+  img {
+   margin-left: 20px;
+   // margin: 24px 0px 24px 24px;
+   width: 45%;
+  }
+
+  button {
+   margin-right: 8.33%;
+   span {
+    svg {
+     width: 15px;
+     height: 15px;
+    }
+   }
+  }
+ }
+
+ .menuitem-badge {
+  display: inline-block;
+  margin-left: 4px;
+  font-size: 0.8em;
+  width: 1em;
+  height: 1em;
+  line-height: 1em;
+  text-align: center;
+  color: $menuitemBadgeColor;
+  background-color: $menuitemBadgeBgColor;
+  @include border-radius(50%);
+ }
+
+ .layout-sidebar-logout {
+  cursor: pointer;
+  color: $error-primary-color;
+  background-color: $error-primary-tag-bg-color;
+  width: 90%;
+  height: 44px;
+  padding: 9px 0px;
+  border-radius: 4px;
+  margin: 0 auto;
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: space-evenly;
+  transition: 0.3s;
+
+  div {
+   display: flex;
+   align-items: center;
+
+   span {
+   }
+  }
+ }
+
+ .layout-sidebar-logout:hover {
+  background-color: $error-primary-hover-color;
+  color: $error-primary-tag-bg-color;
+ }
+}
+
+.layout-menu-button {
+ opacity: 1;
+ transition: 2s;
+}
+
+.layout-overlay-sidebar-active {
+ .layout-topbar {
+  .layout-menu-button {
+   opacity: 0;
+  }
+ }
+}

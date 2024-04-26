@@ -1,0 +1,62 @@
+.link-icon-color {
+ -webkit-transition: 0.3s ease;
+ transition: 0.3s ease;
+ color: $textTagBlue !important;
+ &:hover {
+  color: $textTagBlueHover !important;
+ }
+}
+
+.p-button-icon-only .p-button-icon-left {
+ top: 50%;
+ left: 50%;
+ margin-top: -0.5em;
+ margin-left: -0.5em;
+ width: 1em;
+ height: 1em;
+ &:before {
+  @extend .link-icon-color;
+ }
+}
+
+body .p-button.p-button-icon-only .p-button-text {
+ padding: 0px;
+}
+
+.ant-btn-link.icon {
+ & > * {
+  @extend .center-row-y;
+ }
+ * {
+  @extend .link-icon-color;
+ }
+}
+
+.pi-caret-down::before {
+ content: "\e902" !important;
+ -webkit-transform: rotate(360deg) !important;
+ transform: rotate(360deg) !important;
+}
+
+.pi-caret-right::before {
+ content: "\e903" !important;
+ -webkit-transform: rotate(360deg) !important;
+ transform: rotate(360deg) !important;
+}
+
+.p-tree-toggler-icon,.p-accordion-toggle-icon, [class*="p-treetable-toggler-icon"], .p-row-toggler-icon {
+ -webkit-transition:  all 0.2s ease-in-out !important;
+ transition: all 0.2s ease-in-out !important;
+ &::before {
+  -webkit-transition:  all 0.2s ease-in-out !important;
+  transition: all 0.2s ease-in-out !important;
+ }
+}
+
+.icon {
+ border: none;
+ background-color: transparent;
+ text-align: center;
+ display: flex;
+ justify-content: center;
+}

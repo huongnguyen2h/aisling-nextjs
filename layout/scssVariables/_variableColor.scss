@@ -1,0 +1,183 @@
+/* Color Preset */
+
+$info-primary-color: #00aeef;
+$info-primary-hover-color: #40c2f3;
+$info-primary-pressed-color: #008486;
+$info-primary-tag-bg-color: #f2fbfe;
+$info-primary-border-color: #99dff9;
+
+$primary-color: #f58220;
+$primary-color-hover: #f7a158;
+$primary-color-pressed: #d16a12;
+$primary-color-tag-bg: #fef3e9;
+$primary-color-border: #fac79b;
+
+$secondary-color-1: #00aeef;
+$secondary-color-1-hover: #40c2f3;
+$secondary-color-1-light: #40c3f38a;
+$secondary-color-1-pressed: #008486;
+$secondary-color-1-tag-bg: #f2fbfe;
+$secondary-color-1-border: #99dff9;
+
+$success-primary-color: #2eb553;
+$success-primary-hover-color: #4dd077;
+$success-primary-pressed-color: #039732;
+$success-primary-tag-bg-color: #ebfaef;
+$success-primary-border-color: #b3ebc5;
+
+$color-background: #ffffff;
+$subtitle-color: #d9d9d9;
+$secondary-text-color: #bfbfbf;
+$primary-text-color: #8c8c8c;
+
+$secondary-color-2: #0066b3;
+$secondary-color-2-hover: #408cc6;
+$secondary-color-2-pressed: #0051be;
+$secondary-color-2-tag-bg: #e5f0f7;
+$secondary-color-2-border: #99c2e1;
+
+$error-primary-color: #f5222d;
+$error-primary-hover-color: #ff4d4f;
+$error-primary-pressed-color: #cf1322;
+$error-primary-tag-bg-color: #fff1f0;
+$error-primary-border-color: #ffa39e;
+
+$grey-1-background-color: #ffffff;
+$grey-2-background-color: #fafafa;
+$grey-3-background-color: #f3f3f3;
+$grey-4-background-color: #e8e8e8;
+$disable-background-color: #d9d9d9;
+$grey-9-background-color: #333333;
+
+/* Menu Common */
+$menuitemBadgeBgColor: #000000;
+$menuitemBadgeColor: #000000;
+$submenuFontSize: 13px;
+$menuitemActiveRouteColor: #000000;
+
+/* Menu Light */
+$menuBgColorFirst: #ffffff;
+$menuBgColorLast: #ffffff;
+$menuitemColor: #8c8c8c;
+$menuitemHoverColor: rgba(168, 168, 168, 0.69);
+$menuitemActiveColor: #000000;
+$menuitemActiveBgColor: #000000;
+$menuitemBorderColor: #f3f3f3;
+
+/* Menu Dark */
+$menuDarkBgColorFirst: #4d505b;
+$menuDarkBgColorLast: #3b3e47;
+$menuitemDarkColor: #ffffff;
+$menuitemDarkHoverColor: rgba(168, 168, 168, 0.69);
+$menuitemDarkActiveColor: #043370;
+$menuitemDarkActiveBgColor: #2e3035;
+$menuitemDarkBorderColor: rgba(52, 56, 65, 0.6);
+
+/* Topbar */
+$topbarLeftBgColor: #ffffff;
+$topbarRightBgColor: #ffffff;
+$topbarItemBadgeBgColor: #ffffff;
+$topbarItemBadgeColor: #000000;
+$topbarItemColor: #000000;
+$topbarItemHoverColor: rgba(168, 168, 168, 0.69);
+$topbarSearchInputBorderBottomColor: #ffffff;
+$topbarSearchInputColor: #ffffff;
+
+/* Main */
+$mainHighLight: $secondary-color-1;
+$boxShadowHighlightColor: #8dcdff;
+$boxShadowHighlightBorderSolid: 0 0 0 0.2rem;
+$boxShadowHighlightBorderLight: 0 0 0.2rem 0;
+
+$boxShadowHighlightSolid: $boxShadowHighlightColor $boxShadowHighlightBorderSolid;
+$boxShadowHighlightLight: $boxShadowHighlightColor $boxShadowHighlightBorderLight;
+
+$boxShadowHighlightAccordion: inset -0.2rem 0 0.2rem -0.2rem $boxShadowHighlightColor,
+ inset 0.2rem 0 0.2rem -0.2rem $boxShadowHighlightColor,
+ inset 0 0.2rem 0.2rem -0.2rem $boxShadowHighlightColor;
+
+// $boxShadowHighlight: inset #8dcdff 0px 0px 60px -12px;
+
+/* Footer */
+$footerBgColor: rgba(207, 211, 224, 0.6);
+
+// New 19/08/2022
+$bgWhite: #ffffff;
+
+/* Input */
+$borderColor: #f3f3f3;
+// $borderColor: black;
+$borderColor: #e8e8e8;
+$borderColorHover: #d3d3d3;
+$title-color: #595959;
+$input-color: #595959;
+$borderColorHover2: #9ec9fa4d;
+
+// Typography
+
+$typography-title: #323232;
+$typography-text: #8c8c8c;
+
+// Checkbox
+
+$typoWhite: #ffffff;
+$disableBg: rgba(217, 217, 217, 0.3);
+$disableCheckedBg: $disableBg;
+$disableUnchecked: #e8e8e8;
+
+$checkedBorder: $mainHighLight;
+$checkedColor: $mainHighLight;
+
+// $borderColor : $disableBg;
+
+// Scrollbar
+
+$scrollBarColor: #d9d9d9;
+$scrollBarColorHover: #e8e8e8;
+
+// Tag color
+
+$bgTagGreen: #ebfaef;
+$textTagGreen: #2eb553;
+
+$bgTagBlue: #e6f7ff;
+$bgTagBlueHover: #badae7;
+$textTagBlue: #1890ff;
+$textTagBlueHover: rgb(117, 188, 255);
+$textReadOnly: #42cdff;
+
+$textTagRed: #f5222d;
+$bgTagRed: #fff1f0;
+
+$textTagPink: #f52293;
+$bgTagPink: #fff0f6;
+
+$textTagPurple: #531dab;
+$bgTagPurple: #f9f0ff;
+
+$textTagYellow: #d4b106;
+$bgTagYellow: #feffe6;
+
+$textTagOrange: #d46b08;
+$bgTagOrange: #fff7e6;
+
+// Resizer color
+
+$resizerColor: #000;
+$resizerOpacityNormal: 0.075;
+$resizerOpacityHovered: 0.125;
+
+/* Dialog */
+$dialogWarningBgColor: #ffcc00;
+$dialogBoxShadow: 0 0 0 0.2rem;
+
+/* Empty Message */
+$emptyMessageShadowFill: #f5f5f5;
+$emptyMessageImgSimpleStroke: #d9d9d9;
+$emptyMessageImgSimpleFill: #fafafa;
+
+/* Other */
+$antSelectSelectorBorder: #a6a6a6;
+$highlightColor: #dbdbdb;
+$transparent: rgba(0, 0, 0, 0);
+$disableTree : rgba(217, 217, 217, 0.9);

@@ -1,0 +1,257 @@
+// Icon Override Mixin
+@mixin icon-override($icon) {
+    &:before {
+        content: $icon;
+    }
+}
+
+// === MIXINS === //
+@mixin border-radius($val) {
+    -moz-border-radius: $val;
+    -webkit-border-radius: $val;
+    border-radius: $val;
+}
+
+@mixin border-radius-right($val) {
+    -moz-border-radius-topright: $val;
+    -webkit-border-top-right-radius: $val;
+    border-top-right-radius: $val;
+    -moz-border-radius-bottomright: $val;
+    -webkit-border-bottom-right-radius: $val;
+    border-bottom-right-radius: $val;
+}
+
+@mixin border-radius-left($val) {
+    -moz-border-radius-topleft: $val;
+    -webkit-border-top-left-radius: $val;
+    border-top-left-radius: $val;
+    -moz-border-radius-bottomleft: $val;
+    -webkit-border-bottom-left-radius: $val;
+    border-bottom-left-radius: $val;
+}
+
+@mixin border-radius-top($val) {
+    -moz-border-radius-topleft: $val;
+    -webkit-border-top-left-radius: $val;
+    border-top-left-radius: $val;
+    -moz-border-radius-topright: $val;
+    -webkit-border-top-right-radius: $val;
+    border-top-right-radius: $val;
+}
+
+@mixin border-radius-bottom($val) {
+    -moz-border-radius-bottomleft: $val;
+    -webkit-border-bottom-left-radius: $val;
+    border-bottom-left-radius: $val;
+    -moz-border-radius-bottomright: $val;
+    -webkit-border-bottom-right-radius: $val;
+    border-bottom-right-radius: $val;
+}
+
+@mixin linear-gradient($top, $bottom) {
+    background: $top;
+    /* Old browsers */
+    background: -moz-linear-gradient(top, $top 0%, $bottom 100%);
+    /* FF3.6+ */
+    background: -webkit-gradient(linear,
+            left top,
+            left bottom,
+            color-stop(0%, $top),
+            color-stop(100%, $bottom));
+    /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top,
+            $top 0%,
+            $bottom 100%);
+    /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top,
+            $top 0%,
+            $bottom 100%);
+    /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, $top 0%, $bottom 100%);
+    /* IE10+ */
+    background: linear-gradient(to bottom, $top 0%, $bottom 100%);
+    /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#000000', GradientType=0);
+    /* IE6-9 */
+}
+
+@mixin linear-gradient-left($left, $right) {
+    background: $left;
+    /* Old browsers */
+    background: -moz-linear-gradient(left, $left 0%, $right 100%);
+    /* FF3.6+ */
+    background: -webkit-gradient(linear,
+            left top,
+            right top,
+            color-stop(0%, $left),
+            color-stop(100%, $right));
+    /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(left,
+            $left 0%,
+            $right 100%);
+    /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(left,
+            $left 0%,
+            $right 100%);
+    /* Opera 11.10+ */
+    background: -ms-linear-gradient(left, $left 0%, $right 100%);
+    /* IE10+ */
+    background: linear-gradient(to right, $left 0%, $right 100%);
+    /* W3C */
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=$left, endColorstr=$right, GradientType=1);
+    /* IE6-9 */
+}
+
+@mixin transition($transition...) {
+    -moz-transition: $transition;
+    -o-transition: $transition;
+    -webkit-transition: $transition;
+    transition: $transition;
+}
+
+@mixin transition-property($property) {
+    -webkit-transition-property: $property;
+    -moz-transition-property: $property;
+    -ms-transition-property: $property;
+    -o-transition-property: $property;
+    transition-property: $property;
+}
+
+@mixin transition-duration($duration) {
+    -moz-transition-duration: $duration;
+    -webkit-transition-duration: $duration;
+    -o-transition-duration: $duration;
+    transition-duration: $duration;
+}
+
+@mixin transition-timing-function($function) {
+    -webkit-transition-timing-function: $function;
+    -moz-transition-timing-function: $function;
+    -o-transition-timing-function: $function;
+    transition-timing-function: $function;
+}
+
+@mixin opacity($opacity) {
+    opacity: $opacity;
+    $opacity-ie: $opacity * 100;
+    filter: alpha(opacity=$opacity-ie);
+}
+
+@mixin shadow($value) {
+    -webkit-box-shadow: $value;
+    -moz-box-shadow: $value;
+    box-shadow: $value;
+}
+
+@mixin clearfix {
+    &:after {
+        content: '';
+        display: table;
+        clear: both;
+    }
+}
+
+@mixin typoExtend($fontStyle, $fontWeight) {
+    color: $typography-title;
+    font-family: $default-font !important;
+    font-style: $fontStyle;
+    font-weight: $fontWeight;
+}
+
+@mixin responsive($min, $max) {
+    @media screen and (min-width: $min) and (max-width: $max) {
+      @content;
+    }
+  }
+
+@mixin centerFlex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+@mixin combineBreakPointUnit($property, $unit, $val1, $val2, $val3, $val4, $val5, $val6) {
+    @include responsive(320px, 480px) {
+        #{$property}: $val1#{$unit};
+    }
+
+    @include responsive(481px, 767px) {
+        #{$property}: $val2#{$unit};
+    }
+
+    @include responsive(768px, 991px) {
+        #{$property}: $val3#{$unit};
+    }
+
+    @include responsive(992px, 1280px) {
+        #{$property}: $val4#{$unit};
+    }
+
+    @include responsive(1281px, 1599px) {
+        #{$property}: $val5#{$unit};
+    }
+
+    @include responsive(1600px, 99999px) {
+        #{$property}: $val6#{$unit};
+    }
+}
+
+
+@mixin respond ($beakpoint) {
+    @if $beakpoint == phone {
+        @media (max-width : 37.5em) {@content}
+    }
+    @if $beakpoint == tab-port {
+        @media (max-width : 56.25em) {@content}
+    }
+    @if $beakpoint == tab-land {
+        @media (max-width : 75em) {@content}
+    }
+    @if $beakpoint == big-desktop {
+        @media (min-width : 112.5em) {@content}
+    }
+}
+
+@mixin customTableStyles($var , $page) {
+    tr:has(span[aria-level="#{$page}"]) {
+        border: 1px solid $borderColor;
+        td:has(span[aria-level="#{$page}"]) {
+              border: none !important;
+              padding-left: calc(20px + #{$var}px) !important;
+              margin-top: 0 !important;
+              margin-left: 0 !important;
+              position: relative;
+          
+              & > span:nth-child(1) {
+                visibility: unset;
+                margin-left: 15px !important;
+              }
+              &::after {
+                transition: .25s all ease-in-out;
+                left: calc(20px + #{$var}px);
+                position: absolute;
+                height: 100%;
+                width: 4px;
+                background-color: $borderColor;
+                content: '';
+                transform: scaleY(2);
+              }
+        }
+
+        td:has(span[aria-level="#{$page}"]):has(.p-checkbox-box.p-highlight) {
+            // display: none;    
+            &::after {
+                transition: .25s all ease-in-out;
+                left: calc(20px + #{$var}px);
+                position: absolute;
+                height: 100%;
+                width: 4px;
+                background-color: $textTagBlueHover;
+                content: '';
+                transform: scaleY(2);
+              }
+        }
+    }
+  }
+  

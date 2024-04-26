@@ -11,6 +11,8 @@ import '../blocks/CollectionView/CollectionView.builder'
 import '../blocks/ProductView/ProductView.builder'
 import '../blocks/CloudinaryImage/CloudinaryImage.builder'
 
+import '/layout/layout.scss'
+
 Builder.register('insertMenu', {
   name: 'Shopify Collections Components',
   items: [

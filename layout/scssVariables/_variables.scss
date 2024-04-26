@@ -1,0 +1,16 @@
+@import "src/layout/scssVariables/_variableSize.scss";
+@import "src/layout/scssVariables/_variableColor.scss";
+
+/* General */
+$fontSize: 14px;
+// $bodyBgColor: #edf0f5;
+$bodyBgColor: unset;
+$textColor: #333333;
+$textSecondaryColor: #707070;
+$dividerColor: #e3e3e3;
+$transitionDuration: 0.2s;
+$maskBgColor: #424242;
+$backGroupColor: rgb(243, 243, 243);
+$default-font: "Roboto", "Helvetica", "Arial", sans-serif;
+$typoSecondaryText: #8c8c8c;
+$bottomBorder: #f3f3f3;

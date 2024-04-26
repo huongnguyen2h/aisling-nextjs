@@ -9,32 +9,42 @@ import Image from 'next/legacy/image'
 import Searchbar from './Searchbar'
 import Link from '@components/common/Link'
 import { Bag } from '@components/icons'
+import { NavbarService } from 'db/NavbarService'
 
 const Navbar: FC = () => {
   const [announcement, setAnnouncement] = useState()
   const { theme } = useThemeUI()
-  const { navigationLinks, logo, openSidebar } = useUI()
+  const { logo, openSidebar } = useUI()
+  const [navigationLinks, setNavigationLinks]: any = useState()
   const cart = useCart()
+  const navbarService: any = NavbarService
+
+  async function fetchNavbarLinks() {
+    const res = await NavbarService.getAllNavbarLinks()
+    console.log('res: ', res)
+    let data = await res.json()
+    console.log('data: ', data)
+		setNavigationLinks(data)
+  }
 
   useEffect(() => {
-    async function fetchContent() {
-      const items = cart?.lineItems || []
-      const anouncementContent = await builder
-        .get('announcement-bar', {
-          cacheSeconds: 120,
-          userAttributes: {
-            itemInCart: items.map((item: any) => item.variant.product.handle),
-          } as any,
-        })
-        .toPromise()
-      setAnnouncement(anouncementContent)
-    }
-    fetchContent()
+    // async function fetchContent() {
+    //   const items = cart?.lineItems || []
+    //   const anouncementContent = await builder
+    //     .get('announcement-bar', {
+    //       cacheSeconds: 120,
+    //       userAttributes: {
+    //         itemInCart: items.map((item: any) => item.variant.product.handle),
+    //       } as any,
+    //     })
+    //     .toPromise()
+    //   setAnnouncement(anouncementContent)
+    // }
+    // fetchContent()
+    fetchNavbarLinks()
   }, [cart?.lineItems])
 
-  console.log('navigationLinks: ', navigationLinks);
-  
-  
+  console.log('navigationLinks: ', navigationLinks)
 
   return (
     <React.Fragment>
@@ -64,9 +74,9 @@ const Navbar: FC = () => {
             justifyContent: 'space-evenly',
           }}
         >
-          {navigationLinks?.map((link, index) => (
-            <Link key={index} sx={{ padding: 10 }} href={link.link || '//'}>
-              {link.title}
+          {navigationLinks?.map((link: any, index: any) => (
+            <Link key={index} sx={{ padding: 10 }} href={link?.link || '//'} target={link?.target || ''}>
+              {link?.title}
             </Link>
           ))}
         </Box>
@@ -109,7 +119,8 @@ const Navbar: FC = () => {
                   paddingLeft: '5px',
                 }}
               >
-                {logo.text}
+                {/* {logo.text} */}
+								♡【Henlo! This is Aisling's Planet!】♡
               </Link>
             )}
           </Heading>

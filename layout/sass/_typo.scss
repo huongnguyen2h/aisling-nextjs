@@ -1,0 +1,264 @@
+/* Regular Typography */
+.regular-0 {
+ font-size: 9px !important;
+ line-height: 14px !important;
+ @include typoExtend("normal", 400);
+}
+.regular-1 {
+ font-size: 11px !important;
+ line-height: 16px !important;
+ @include typoExtend("normal", 400);
+}
+.regular-2 {
+ font-size: 13px !important;
+ line-height: 22px !important;
+ @include typoExtend("normal", 400);
+}
+.regular-3 {
+ font-size: 15px !important;
+ line-height: 28px !important;
+ @include typoExtend("normal", 400);
+}
+.regular-4 {
+ font-size: 18px !important;
+ line-height: 28px !important;
+ @include typoExtend("normal", 400);
+}
+.regular-5 {
+ font-size: 21px !important;
+ line-height: 32px !important;
+ @include typoExtend("normal", 400);
+}
+.regular-6 {
+ font-size: 26px !important;
+ line-height: 38px !important;
+ @include typoExtend("normal", 400);
+}
+.regular-7 {
+ font-size: 34px !important;
+ line-height: 48px !important;
+ @include typoExtend("normal", 400);
+}
+.regular-8 {
+ font-size: 40px !important;
+ line-height: 54px !important;
+ @include typoExtend("normal", 400);
+}
+.regular-9 {
+ font-size: 56px !important;
+ line-height: 64px !important;
+ @include typoExtend("normal", 400);
+}
+
+// Medium
+.medium-1 {
+ font-size: 11px !important;
+ line-height: 20px !important;
+ @include typoExtend("normal", 500);
+}
+
+.medium-2 {
+ font-size: 12px !important;
+ line-height: 22px !important;
+ @include typoExtend("normal", 500);
+}
+.medium-3 {
+ font-size: 14px !important;
+ line-height: 24px !important;
+ @include typoExtend("normal", 500);
+}
+
+.medium-4 {
+ font-size: 17px !important;
+ line-height: 28px !important;
+ @include typoExtend("normal", 500);
+}
+
+.medium-5 {
+ font-size: 20px !important;
+ line-height: 32px !important;
+ @include typoExtend("normal", 500);
+}
+
+.medium-6 {
+ font-size: 25px !important;
+ line-height: 38px !important;
+ @include typoExtend("normal", 500);
+}
+
+.medium-7 {
+ font-size: 32px !important;
+ line-height: 48px !important;
+ @include typoExtend("normal", 500);
+}
+
+.medium-8 {
+ font-size: 40px !important;
+ line-height: 54px !important;
+ @include typoExtend("normal", 500);
+}
+
+.medium-9 {
+ font-size: 56px !important;
+ line-height: 64px !important;
+ @include typoExtend("normal", 500);
+}
+
+// Heading Typography
+
+.typo__heading--1 {
+ @extend .medium-7;
+}
+.typo__heading--2 {
+ @extend .medium-6;
+}
+.typo__heading--3 {
+ @extend .medium-5;
+}
+.typo__heading--4 {
+ @extend .medium-4;
+}
+.typo__heading--5 {
+ @extend .medium-3;
+}
+.typo__heading--6 {
+ @extend .medium-2;
+}
+
+// Title Typography
+
+.typo__title--large {
+ @extend .medium-7;
+}
+
+.typo__title--1 {
+ @extend .medium-5;
+}
+
+.typo__title--2 {
+ @extend .medium-4;
+}
+
+.typo__title--3 {
+ @extend .medium-3;
+}
+
+.typo__title--4 {
+ @extend .regular-3;
+}
+
+.typo__title--5 {
+ @extend .medium-2;
+}
+
+.typo__title--6 {
+ @extend .regular-2;
+}
+
+// Body Text Typography
+
+.typo__body-text--1 {
+ @extend .regular-3;
+}
+
+.typo__body-text--2 {
+ @extend .regular-2;
+}
+
+// Button Text Typography
+
+.typo__button-text--1 {
+ @extend .medium-3;
+}
+
+.typo__button-text--2 {
+ @extend .regular-2;
+}
+
+.typo__button-text--3 {
+ @extend .regular-1;
+}
+
+// Link Typography
+
+.typo__link--1 {
+ @extend .medium-3;
+ text-decoration: underline;
+}
+.typo__link--2 {
+ @extend .regular-3;
+ text-decoration: underline;
+}
+.typo__link--3 {
+ @extend .regular-2;
+ text-decoration: underline;
+}
+.typo__link--4 {
+ @extend .regular-1;
+ text-decoration: underline;
+}
+
+// Subtitle Typography
+
+.typo__sub--1 {
+ @extend .regular-3;
+}
+.typo__sub--2 {
+ @extend .regular-2;
+}
+.typo__sub--3 {
+ @extend .regular-1;
+}
+.typo__sub--4 {
+ @extend .regular-0;
+}
+
+// Label Typography
+
+.typo__label--1 {
+ @extend .medium-3;
+}
+.typo__label--2 {
+ @extend .regular-3;
+}
+.typo__label--3 {
+ @extend .medium-2;
+}
+.typo__label--4 {
+ @extend .regular-2;
+}
+.typo__label--5 {
+ @extend .regular-1;
+}
+
+// Placeholder Typography
+
+.typo__placeholder--1 {
+ @extend .regular-3;
+}
+
+.typo__placeholder--2 {
+ @extend .regular-2;
+}
+
+// Caption Typography
+
+.typo__caption--1 {
+ @extend .regular-2;
+}
+
+.typo__caption--2 {
+ @extend .regular-1;
+}
+
+.typo__caption--3 {
+ @extend .regular-0;
+}
+
+// Footnote Typography
+
+.typo__footnote--default {
+ @extend .regular-1;
+}
+
+@import "typoResponsive";

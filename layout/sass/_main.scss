@@ -1,0 +1,306 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    height: 100%;
+}
+
+body {
+    font-family: $default-font !important;
+    font-style: normal;
+    font-size: $fontSize;
+    color: $textColor;
+    // background-color: $bodyBgColor;
+    margin: 0;
+    padding: 0;
+    line-height: 22px;
+    min-height: 100%;
+    -webkit-font-smoothing: antialiased;
+}
+
+a {
+    text-decoration: none;
+}
+
+.layout-wrapper {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    // flex-wrap: wrap;
+    justify-content: space-between;
+    // @include combineBreakPointUnit(padding-top, px, 30, 41, 52, 55, 70, 80);
+    min-height: 100vh;
+    max-height: 100vh;
+    background: $backGroupColor;
+}
+
+.layout-wrapper-content {
+    @extend .flex-100;
+    height: auto !important;
+    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    // align-items: start;
+    width: 100%;
+    // flex-flow: row wrap; 
+    align-items: stretch;
+    align-self: stretch;
+    .layout-content{
+        @extend .flex-100;
+        height: auto !important;
+        > div {
+            @extend .flex-100;
+            height: auto !important;
+            overflow: scroll;
+        }
+    }
+}
+
+.layout-main {
+    // flex-grow: 1 !important;
+    // flex-shrink: 0 !important;
+    // height: 90px !important;
+    // display: block;
+    display: flex;
+    > .breadcrumb-wrapper {
+        flex-grow: 0 !important;
+        flex-shrink: 0 !important;
+        height: auto !important;
+    }
+    > div:not(.p-overlaypanel) {
+        width: 100%;
+        height: auto;
+        min-height: 0;
+        display: flex;
+    }
+    flex: auto !important;
+    flex-direction: column;
+    // width: 100%;
+    @include combineBreakPointUnit(
+        width,
+        '',
+        calc(100% - #{$navbarHeight1}px),
+        calc(100% - #{$navbarHeight2}px),
+        calc(100% - #{$navbarHeight3}px),
+        calc(100% - #{$navbarHeight4}px),
+        calc(100% - #{$navbarHeight5}px),
+        calc(100% - #{$navbarHeight6}px)
+    );
+    // @include combineBreakPointUnit(
+    //     height,
+    //     '',
+    //     calc(100vh - #{$navbarHeight1}px),
+    //     calc(100vh - #{$navbarHeight2}px),
+    //     calc(100vh - #{$navbarHeight3}px),
+    //     calc(100vh - #{$navbarHeight4}px),
+    //     calc(100vh - #{$navbarHeight5}px),
+    //     calc(100vh - #{$navbarHeight6}px)
+    // );
+    & > .row {
+        align-items: flex-start;
+    }
+}
+
+// Iframe HTML Injection
+
+iframe {
+    border: none;
+    width: 100%;
+    height: 100%;
+    html {
+        width: 100%;
+        height: 100%;
+    }
+    body {
+        overflow: hidden;
+        padding: 0;
+        margin: 0;
+        /* text-align: center; */
+        display: flex;
+        justify-content: center;
+        text-align: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+
+.leftnavbar {
+    border-right: 1px solid $grey-3-background-color;
+    // position: relative;
+    position: -webkit-sticky;
+    position: sticky;
+    flex: auto  !important;
+    left: 0;
+    top: 0;
+    // height: 100%;
+    background-color: $color-background;
+    display: flex;
+    // flex: 1 !important;
+    // flex-shrink: 0;
+    // flex-grow: 1;
+    flex-direction: column;
+    justify-content: space-between;
+    align-self: stretch;
+
+    @include combineBreakPointUnit(
+        width,
+        px,
+        $navbarHeight1,
+        $navbarHeight2,
+        $navbarHeight3,
+        $navbarHeight4,
+        $navbarHeight5,
+        $navbarHeight6
+    );
+    // @include combineBreakPointUnit(
+    //     height,
+    //     '',
+    //     calc(100% - #{$navbarHeight1}px),
+    //     calc(100% - #{$navbarHeight2}px),
+    //     calc(100% - #{$navbarHeight3}px),
+    //     calc(100% - #{$navbarHeight4}px),
+    //     calc(100% - #{$navbarHeight5}px),
+    //     calc(100% - #{$navbarHeight6}px)
+    // );
+    // @include combineBreakPointUnit(
+    //     height,
+    //     '',
+    //     calc(100vh - #{$navbarHeight1 * 2}px),
+    //     calc(100vh - #{$navbarHeight2 * 2}px),
+    //     calc(100vh - #{$navbarHeight3 * 2}px),
+    //     calc(100vh - #{$navbarHeight4 * 2}px),
+    //     calc(100vh - #{$navbarHeight5 * 2}px),
+    //     calc(100vh - #{$navbarHeight6 * 2}px)
+    // );
+    // @include combineBreakPointUnit(
+    //     height,
+    //     '',
+    //     calc(100vh - #{$navbarHeight1}px),
+    //     calc(100vh - #{$navbarHeight2}px),
+    //     calc(100vh - #{$navbarHeight3}px),
+    //     calc(100vh - #{$navbarHeight4}px),
+    //     calc(100vh - #{$navbarHeight5}px),
+    //     calc(100vh - #{$navbarHeight6}px)
+    // );
+    // @include combineBreakPointUnit(
+    //  padding-top,
+    //  px,
+    //  $navbarHeight1,
+    //  $navbarHeight2,
+    //  $navbarHeight3,
+    //  $navbarHeight4,
+    //  $navbarHeight5,
+    //  $navbarHeight6
+    // );
+
+    .bottom__button {
+        @include centerFlex;
+        border-top: 0.75px solid $bottomBorder;
+        @include combineBreakPointUnit(height, px, 25, 27.5, 30, 35, 40, 50);
+        position: relative;
+        cursor: pointer;
+        overflow: hidden;
+
+        svg {
+            width: 30%;
+            height: 30%;
+        }
+
+        &:hover:after {
+            transform: translate(-50%, -50%) scale(3);
+        }
+        &:after {
+            transition: 0.35s all ease;
+            content: '';
+            background-color: $bottomBorder;
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            left: 50%;
+            height: 100%;
+            width: 50%;
+            height: 80%;
+            z-index: -1;
+            border-radius: 999999px;
+        }
+    }
+    .hidden {
+        visibility: hidden;
+    }
+    &__list {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        padding: 0;
+        margin: 0 !important;
+
+        .active {
+            background-color: $grey-3-background-color;
+        }
+        &--item {
+            @include combineBreakPointUnit(height, px, 25, 27.5, 30, 35, 40, 50);
+            svg {
+                height: 100%;
+                width: 100%;
+            }
+            @include centerFlex;
+            &:not(:first-child) {
+                border-top: 0.75px solid $borderColor;
+            }
+            transition: all 0.2s;
+            &:hover,
+            &:active,
+            &:focus {
+                background-color: $grey-3-background-color;
+            }
+
+            &:last-child {
+                border-bottom: 0.75px solid $borderColor;
+            }
+        }
+    }
+}
+
+.p-tree {
+    * {
+        -webkit-transition: all 0.3s ease !important;
+        transition: all 0.3s ease !important;
+    }
+}
+
+
+
+.flex-100:has(>div>.ck-editor) {
+    background-color: blue !important;
+    // flex-grow: 1;
+    // flex-shrink: 0;
+        > div {
+            @extend .flex-100;
+            overflow: unset !important;
+            background-color: red !important;
+            >.ck-editor {
+                @extend .flex-100;
+                > .ck-editor__main {
+                    @extend .flex-100;
+                    > .ck-editor__editable {
+                        @extend .flex-100;
+                    }
+                }
+            }
+        }
+}
+
+
+// .ck-editor {
+//     @extend .flex-100;
+//     background-color: red !important;
+//     > .ck-editor__main {
+//         @extend .flex-100;
+//     }
+//     > &__editable {
+//         @extend .flex-100;
+//     }
+// }

@@ -1,0 +1,123 @@
+.regular-0 {
+ font-size: 9px !important;
+ line-height: 14px !important;
+ @include combineBreakPointUnit(font-size, px !important, 9, 9, 9, 9, 9, 9);
+ @include combineBreakPointUnit(line-height, px !important, 14, 14, 14, 14, 14, 14);
+}
+.regular-1 {
+ font-size: 10px !important;
+ line-height: 15px !important;
+ @include combineBreakPointUnit(font-size, px !important, 10, 10, 10, 11, 11, 11);
+ @include combineBreakPointUnit(line-height, px !important, 15, 15, 15, 16, 16, 16);
+}
+.regular-2 {
+ font-size: 11px !important;
+ line-height: 19px !important;
+ @include combineBreakPointUnit(font-size, px !important, 11, 11, 12, 12, 13, 13);
+ @include combineBreakPointUnit(line-height, px !important, 19, 19, 20, 20, 22, 22);
+}
+.regular-3 {
+ font-size: 13px !important;
+ line-height: 24px !important;
+ @include combineBreakPointUnit(font-size, px !important, 13, 13, 14, 14, 15, 15);
+ @include combineBreakPointUnit(line-height, px !important, 24, 24, 26, 26, 28, 28);
+}
+.regular-4 {
+ font-size: 15px !important;
+ line-height: 23px !important;
+ @include combineBreakPointUnit(font-size, px !important, 15, 15, 16, 17, 17, 18);
+ @include combineBreakPointUnit(line-height, px !important, 23, 23, 25, 26, 26, 28);
+}
+.regular-5 {
+ font-size: 16px !important;
+ line-height: 24px !important;
+ @include combineBreakPointUnit(font-size, px !important, 16, 17, 18, 19, 20, 21);
+ @include combineBreakPointUnit(line-height, px !important, 24, 26, 27.5, 29, 30.5, 32);
+}
+.regular-6 {
+ font-size: 19px !important;
+ line-height: 27.5px !important;
+ @include combineBreakPointUnit(font-size, px !important, 19, 20, 21, 22, 24, 26);
+ @include combineBreakPointUnit(line-height, px !important, 27.5, 29, 30, 32, 35, 38);
+}
+.regular-7 {
+ font-size: 24px !important;
+ line-height: 34px !important;
+ @include combineBreakPointUnit(font-size, px !important, 24, 26, 28, 30, 32, 34);
+ @include combineBreakPointUnit(line-height, px !important, 34, 36.5, 39.5, 42, 45, 48);
+}
+.regular-8 {
+ font-size: 27px !important;
+ line-height: 36.5px !important;
+ @include combineBreakPointUnit(font-size, px !important, 27, 30, 33, 36, 38, 40);
+ @include combineBreakPointUnit(line-height, px !important, 36.5, 40.5, 44.5, 48.5, 51, 54);
+}
+.regular-9 {
+ font-size: 36px !important;
+ line-height: 41px !important;
+ @include combineBreakPointUnit(font-size, px !important, 36, 40, 44, 48, 52, 56);
+ @include combineBreakPointUnit(line-height, px !important, 41, 45.5, 50, 55, 59.5, 64);
+}
+
+// Medium
+.medium-1 {
+ font-size: 10px !important;
+ line-height: 18px !important;
+ @include combineBreakPointUnit(font-size, px !important, 10, 10, 10, 11, 11, 11);
+ @include combineBreakPointUnit(line-height, px !important, 18, 18, 18, 20, 20, 20);
+}
+
+.medium-2 {
+ font-size: 11px !important;
+ line-height: 18.5px !important;
+ @include combineBreakPointUnit(font-size, px !important, 11, 11, 12, 12, 13, 13);
+ @include combineBreakPointUnit(line-height, px !important, 18.5, 18.5, 20, 20, 22, 22);
+}
+.medium-3 {
+ font-size: 12px !important;
+ line-height: 18.5px !important;
+ @include combineBreakPointUnit(font-size, px !important, 12, 12, 13, 13, 14, 14);
+ @include combineBreakPointUnit(line-height, px !important, 18.5, 18.5, 20.5, 20.5, 22, 22);
+}
+
+.medium-4 {
+ font-size: 15px !important;
+ line-height: 24px !important;
+ @include combineBreakPointUnit(font-size, px !important, 15, 15, 16, 16, 17, 17);
+ @include combineBreakPointUnit(line-height, px !important, 24, 24, 26, 26, 28, 28);
+}
+
+.medium-5 {
+ font-size: 17px !important;
+ line-height: 27px !important;
+ @include combineBreakPointUnit(font-size, px !important, 17, 17, 18, 18, 19, 20);
+ @include combineBreakPointUnit(line-height, px !important, 27, 27, 29, 29, 30, 32);
+}
+
+.medium-6 {
+ font-size: 19px !important;
+ line-height: 29px !important;
+ @include combineBreakPointUnit(font-size, px !important, 19, 20, 21, 22, 24, 25);
+ @include combineBreakPointUnit(line-height, px !important, 29, 30.5, 32, 33.5, 36.5, 38);
+}
+
+.medium-7 {
+ font-size: 22px !important;
+ line-height: 33px !important;
+ @include combineBreakPointUnit(font-size, px !important, 22, 24, 26, 28, 30, 32);
+ @include combineBreakPointUnit(line-height, px !important, 33, 36, 39, 42, 45, 48);
+}
+
+.medium-8 {
+ font-size: 27px !important;
+ line-height: 36.5px !important;
+ @include combineBreakPointUnit(font-size, px !important, 27, 30, 33, 36, 38, 40);
+ @include combineBreakPointUnit(line-height, px !important, 36.5, 40.5, 44.5, 48.5, 51, 54);
+}
+
+.medium-9 {
+ font-size: 36px !important;
+ line-height: 41px !important;
+ @include combineBreakPointUnit(font-size, px !important, 36, 40, 44, 48, 52, 56);
+ @include combineBreakPointUnit(line-height, px !important, 41, 45.5, 50, 55, 59.5, 64);
+}

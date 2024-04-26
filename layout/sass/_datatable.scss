@@ -1,0 +1,700 @@
+/* DataTable start */
+
+// Primereact/datatable custom
+
+.p-dropdown.p-component {
+  .p-dropdown-label.p-inputtext {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden !important;
+    flex-grow: 1 !important;
+    // align-items: center;
+  }
+}
+
+.p-datatable > .p-paginator > .p-dropdown > .p-dropdown-panel {
+  height: min-content;
+  transform: translateY(-100%) !important;
+  top: 0px !important;
+  overflow: hidden auto;
+  width: 60px;
+}
+
+.p-datatable > .p-paginator > .p-dropdown > .p-up {
+  bottom: 30px;
+  top: unset;
+}
+
+.p-datatable > .p-paginator > .p-dropdown > .p-down {
+  top: 30px;
+  bottom: unset;
+}
+
+.p-datatable .p-column-title {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.p-datatable .p-sortable-column-icon {
+  vertical-align: middle;
+  position: absolute;
+  right: 0;
+  top: 0;
+  color: orange !important;
+  font-size: 1em;
+}
+
+.p-datatable-emptymessage {
+  height: 50px;
+}
+
+.p-dropdown-clearable {
+  margin: 0;
+}
+
+// Overrides 19/08/2022 ----------------------------------------------------------------------------------
+
+.p-datatable-thead {
+  border-bottom: 1px solid $borderColor;
+  height: 34px;
+}
+
+.p-datatable-thead > tr > th {
+  border: 0 none !important;
+  border-bottom: 1px solid $borderColor !important;
+  border-right: 1px solid $borderColor !important;
+  // text-align: left !important;
+
+  &.p-filter-column {
+    border-top: 1px solid $borderColor !important;
+  }
+  &:first-child {
+    // text-align: left;
+    padding-left: $inputFieldPaddingY;
+  }
+  &:last-child {
+    // text-align: right;
+    padding-right: $inputFieldPaddingY;
+  }
+}
+
+.p-datatable-tbody > tr > td {
+  border: 0 none !important;
+  border-bottom: 1px solid $borderColor !important;
+  border-right: 1px solid $borderColor !important;
+  cursor: auto !important;
+}
+
+body .p-datatable .p-datatable-header {
+  padding: 1.2em 1em;
+  border: 0 none !important;
+  border-bottom: 1px solid $borderColor !important;
+  border-radius: 8px 8px 0px 0px;
+
+  & > * {
+    align-items: center;
+  }
+
+  h4,
+  .h4 {
+    margin: 0 !important;
+    @extend .typo__heading--4;
+  }
+}
+
+body .p-paginator {
+  border: 0 none !important;
+  border-radius: 0px 0px 8px 8px;
+}
+
+body .p-datatable .p-datatable-thead > tr > th {
+  background-color: $color-background;
+}
+
+body .p-datatable .p-datatable-header {
+  background-color: $color-background;
+}
+
+.p-paginator-left-content,
+body .p-paginator .p-paginator-element,
+body .p-paginator .p-paginator-pages .p-paginator-page,
+.p-dropdown:not(.p-dropdown-clearable) {
+  // margin-top: 10px;
+  margin-right: $paddingSize;
+}
+
+//chinh sua css cac dong trong datatable
+.trow {
+  border-bottom: 1px solid $borderColor;
+  height: auto;
+  // height: 50px !important;
+  cursor: pointer;
+  transition: all 0.25s ease-in-out;
+
+  // &.p-highlight-contextmenu {
+  //     background-color: $bgTagBlue !important;
+  //     transition: background-color .25s ease-in-out;
+  //     transition: all .25s ease-in-out;
+  //     &:hover {
+  //         background-color: $bgTagBlueHover !important;
+  //     }
+  // }
+
+  > &:not(.p-highlight, .p-highlight-contextmenu):hover {
+    background-color: $grey-3-background-color;
+    color: $mainHighLight !important;
+    font-weight: bold !important;
+    transition: all 0.25s ease-in-out;
+  }
+  &.p-highlight,
+  &.p-highlight-contextmenu {
+    background-color: $secondary-color-1-light !important;
+    box-shadow: none !important;
+    font-weight: bold !important;
+    transition: all 0.25s ease-in-out;
+    * {
+      color: $typoWhite;
+      font-weight: bold !important;
+    }
+    &:hover {
+      background-color: $secondary-color-1-hover !important;
+      transition: all 0.25s ease-in-out;
+    }
+  }
+  &:nth-child(even) {
+    background-color: $color-background;
+  }
+}
+
+body div#primereact-datatable {
+  .p-highlight {
+    .p-column-title {
+      color: $color-background !important;
+    }
+  }
+
+  .p-datatable {
+    &-header {
+      padding: 13px 10px;
+      h4 {
+        @extend .typo__heading--4;
+      }
+
+      button {
+        @extend .typo__button-text--2;
+        color: $color-background;
+      }
+    }
+
+    &-scrollable {
+      cursor: pointer;
+
+      &-wrapper {
+      }
+
+      &-header {
+        &-box {
+          & tr > th {
+            // border: 0px solid transparent !important;
+          }
+
+          .p-column-title {
+            @extend .typo__button-text--1;
+          }
+        }
+      }
+
+      &-body {
+        padding: 0 !important;
+      }
+    }
+
+    &-thead > tr:hover > th {
+      border-right: 1px solid $borderColor !important;
+    }
+
+    &-thead > tr > th,
+    &-tbody > tr > td {
+      border: 0px solid transparent !important;
+      @extend .typo__body-text--2;
+    }
+    &-tbody > tr {
+      & {
+        cursor: pointer !important;
+      }
+    }
+    &-tbody > tr:not(.p-datatable-emptymessage) {
+      @extend .trow;
+    }
+  }
+  .p-sortable-column {
+    text-align: start;
+  }
+
+  #paginatorForm {
+    position: relative;
+    button {
+      position: absolute;
+      top: 50%;
+      transform: translate(-30%, -50%);
+      right: 0;
+      outline: none;
+      background-color: $color-background;
+
+      border: none;
+      i {
+        color: #393939cf;
+      }
+    }
+
+    .tooltip-validate-custom {
+      bottom: 120%;
+      padding: 5px;
+    }
+  }
+}
+
+body .p-datatable .p-datatable-tbody > tr > td {
+  background: inherit;
+  border: 1px solid $borderColor;
+  // white-space: nowrap;
+}
+
+body .p-datatable .p-datatable-tbody > tr > td > div {
+  // white-space: nowrap;
+}
+
+.p-datatable-thead .p-inputtext.p-column-filter,
+.p-datatable-thead .p-dropdown {
+  background: $color-background !important;
+  color: $input-color !important;
+  border: 1px solid $borderColor !important;
+  border-radius: $borderRadius !important;
+  height: $inputFieldHeight;
+  overflow: hidden;
+  @extend .typo__label--4;
+}
+
+.master-data-column {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  // @extend .break-line;
+}
+
+.p-paginator {
+  &-pages {
+    button {
+      @extend .typo__button-text--1;
+    }
+  }
+
+  .pi-step-backward::before {
+    content: '\e91a' !important;
+  }
+  .pi-step-forward::before {
+    content: '\e91b' !important;
+  }
+
+  .pi-caret-left::before {
+    content: '\e900' !important;
+  }
+
+  .pi-caret-right::before {
+    content: '\e901' !important;
+  }
+
+  .p-dropdown {
+    margin-left: $paddingSize;
+    margin-right: $paddingSize;
+    min-width: auto;
+    padding-top: 0;
+    vertical-align: middle;
+    width: auto;
+    position: relative;
+    // overflow: auto;
+    > .p-dropdown-label {
+      display: block;
+      border: 0;
+      white-space: nowrap;
+      overflow: hidden;
+      font-weight: normal;
+      width: auto;
+      // padding: $inputFieldPadding;
+      // height: 100%;
+    }
+    &.p-component {
+      display: flex;
+      flex: 0 1 auto;
+      flex-shrink: 0;
+      flex-direction: row;
+      align-items: center;
+      flex-wrap: wrap;
+      width: auto;
+      .p-dropdown-trigger {
+        background-color: transparent;
+      }
+      .p-dropdown-label.p-inputtext {
+        display: flex;
+        flex: auto;
+        flex-shrink: 0;
+        // align-items: center;
+        border: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        // height: 100%;
+
+        padding: 0;
+        align-items: center;
+        height: 100%;
+        width: auto;
+        position: relative;
+      }
+      > .p-dropdown-trigger {
+        display: flex !important;
+        flex: auto;
+        flex-shrink: 0;
+        justify-content: flex-end;
+        width: auto;
+        background-color: transparent;
+        // padding-left: $inputFieldPaddingX;
+        padding-right: $inputFieldPaddingX;
+        position: relative;
+        > .p-dropdown-trigger-icon {
+          left: 0;
+          top: 0;
+          margin-left: 0;
+          margin-top: 0;
+          position: relative;
+          @extend .center-row-y;
+        }
+      }
+    }
+  }
+}
+
+.messagebox {
+  .p-datatable {
+    min-height: unset;
+  }
+}
+
+.p-datatable {
+  height: 100%;
+  min-height: 200px;
+  display: flex !important;
+  flex-direction: column;
+  > .p-datatable-scrollable-wrapper {
+    height: 100%;
+    max-height: 100%;
+    display: flex !important;
+    flex-direction: column;
+    overflow: hidden !important;
+    flex-grow: 1 !important;
+    > .p-datatable-scrollable-view {
+      height: 100% !important;
+      max-height: 100% !important;
+      // min-height: $datatableMinHeight;
+      display: flex !important;
+      flex-direction: column;
+      overflow-y: scroll !important;
+      overflow-x: scroll !important;
+
+      flex-grow: 1;
+      align-content: stretch;
+      .p-inputtext {
+        height: $inputFieldHeight;
+      }
+      > .p-datatable-scrollable-header {
+        height: $datatableTableHeaderHeight !important;
+        flex-shrink: 0;
+        .p-column-title {
+          display: block !important;
+          .pi {
+            height: auto !important;
+            @extend .center-row-y;
+            @extend .typo__title--3;
+            font-family: 'primeicons' !important;
+            font-size: 150% !important;
+            line-height: 150% !important;
+          }
+        }
+        .p-resizable-column {
+          display: table-cell !important;
+          padding: $datatableTdPadding;
+          // padding: 0;
+          &:first-child {
+            //   text-align: left !important;
+            padding-left: $inputFieldPaddingY;
+          }
+          &:last-child {
+            padding-right: $inputFieldPaddingY;
+          }
+          .p-dropdown-label {
+            justify-content: space-around;
+            text-align: center;
+          }
+          &.p-sortable-column {
+          }
+          > .p-column-filter,
+          > .p-dropdown,
+          > .ant-picker {
+            padding: calc(#{$inputFieldPaddingX / 4}) calc(#{$inputFieldPaddingY / 2});
+            height: auto !important;
+            > .p-dropdown-label {
+              height: auto !important;
+            }
+            // display: flex;
+            // position: unset;
+            // left: $inputFieldPaddingY;
+            // right: $inputFieldPaddingY;
+          }
+          > .ant-picker {
+            > .ant-picker-input {
+              height: auto;
+            }
+          }
+        }
+      }
+      > .p-datatable-scrollable-body {
+        background-color: $bgWhite;
+        // height: 100% !important;
+        width: auto;
+        display: flex !important;
+        flex-direction: column;
+        overflow: scroll !important;
+        // min-height: 100%; // Để phần table ở giữa không chèn vào header trong flexbox datatable
+        > .p-datatable-scrollable-body-table {
+          height: 100%;
+          overflow: auto !important;
+          > .p-datatable-tbody {
+            height: 100%;
+            > tr {
+              height: auto !important;
+              vertical-align: middle;
+              // width: 100%;
+              > td {
+                // word-wrap: unset;
+                display: table-cell;
+                float: none !important;
+
+                overflow: hidden;
+                white-space: nowrap;
+                text-overflow: ellipsis;
+
+                padding: $datatableTdPadding;
+                &:first-child {
+                  //  text-align: left !important;
+                  padding-left: $inputFieldPaddingY;
+                }
+                &:last-child {
+                  //  text-align: right !important;
+                  padding-right: $inputFieldPaddingY;
+                }
+                > .p-column-title {
+                  display: none !important;
+                }
+                @extend .center-row-pi;
+              }
+            }
+            > .p-datatable-emptymessage {
+              border-bottom: none !important;
+              > td > .ant-empty {
+                height: 100% !important;
+                width: 100% !important;
+                position: absolute;
+                display: flex !important;
+                flex-direction: column;
+                margin: auto !important;
+                left: 50%;
+                text-align: left;
+                > .ant-empty-image {
+                  height: 50% !important;
+                  position: relative !important;
+                  > .ant-empty-img-simple {
+                    height: auto !important;
+                    position: absolute !important;
+                    bottom: 0 !important;
+                    min-width: $datatableEmptyImageSize;
+                    max-width: $datatableEmptyImageSize;
+                    > g {
+                      > .ant-empty-img-simple-ellipse {
+                        fill: $emptyMessageShadowFill;
+                      }
+                      > .ant-empty-img-simple-g {
+                        stroke: $emptyMessageImgSimpleStroke;
+                        > .ant-empty-img-simple-path {
+                          fill: $emptyMessageImgSimpleFill;
+                        }
+                      }
+                    }
+                  }
+                }
+                > .ant-empty-description {
+                  height: 50% !important;
+                  min-width: $datatableEmptyImageSize;
+                  max-width: $datatableEmptyImageSize;
+                  text-align: center;
+                }
+              }
+            }
+          }
+        }
+        > .p-datatable-virtual-scroller {
+          height: 10000% !important;
+          // height: auto !important;
+          // overflow: auto !important;
+        }
+      }
+      > .p-datatable-scrollable-body:not(:has(.p-datatable-emptymessage)) {
+        height: 100%;
+        flex: 1;
+        max-height: $datatableScrollHeight !important;
+        // flex-shrink: 0;
+      }
+      > .p-datatable-scrollable-body:has(.p-datatable-emptymessage) {
+        min-height: $datatableMinHeight !important;
+        height: 100% !important;
+        max-height: 100% !important;
+        
+        *:hover {
+            background-color: unset !important;
+            background: unset !important;
+          }
+      }
+      > .p-datatable-scrollable-footer {
+        height: 0% !important;
+      }
+    }
+  }
+  > .p-paginator {
+    background-color: $color-background;
+    height: auto;
+    padding: $datatablePaginatorPadding;
+
+    display: flex;
+    flex-direction: row;
+    > .p-paginator-left-content {
+      max-height: 0;
+      min-width: 1rem;
+      margin-right: auto;
+      width: auto;
+      text-align: left;
+      @extend .center-row-y;
+      > label {
+        transform: translate(0, -50%);
+        @extend .typo__label--4;
+        @extend .center-row-y;
+        height: auto;
+        margin-left: 0 !important;
+
+        @extend .limit-word-lines;
+        -webkit-line-clamp: 2;
+      }
+    }
+
+    > :is(.p-paginator-first, .p-paginator-prev, .p-paginator-next, .p-paginator-last),
+    > .p-paginator-pages > .p-paginator-page {
+      @extend .center-row-y;
+    }
+
+    > .p-paginator-pages {
+      width: auto;
+      height: auto;
+      // max-width: 200px;
+      // min-width: 50px;
+      flex-shrink: 0;
+      overflow: overlay;
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+    }
+
+    > .p-dropdown {
+      bottom: 0;
+      height: $inputFieldHeight;
+      @extend .center-row-y;
+      border-radius: $borderRadius !important;
+      > .p-dropdown-label {
+        @extend .center-row-y;
+        padding-left: $inputFieldPaddingX !important;
+        padding-right: $inputFieldPaddingX !important;
+        justify-content: space-around !important;
+        // align-items: flex-start !important;
+        border-radius: $borderRadius !important;
+        text-align: start;
+      }
+    }
+
+    > .p-paginator-right-content {
+      // width: 200px;
+      margin-left: auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      width: auto;
+      text-align: right;
+      padding-left: $paddingSize;
+      .paginator-go-to-page {
+        height: 100%;
+        width: auto;
+        min-width: $datatableFooterGoToPageMinSize;
+        // -webkit-transform: translateX(-10px) !important;
+        // transform: translateX(-10px) !important;
+        display: flex !important;
+        > form {
+          @extend .center-row-y;
+          button:has(.pi.pi-arrow-right) {
+            background-color: unset !important;
+            height: 100%;
+            .pi.pi-arrow-right {
+              display: flex;
+              height: auto;
+              overflow: unset;
+              @extend .center-row-y;
+              &::before {
+                @extend .center-row-y;
+              }
+            }
+          }
+        }
+      }
+      .extention-wrapper {
+        width: auto;
+        display: flex;
+        padding-left: $paddingSize;
+
+        & > * {
+          width: $datatablePaginatorHeight !important ;
+          position: relative;
+          margin-left: $paddingSize;
+          padding: 0 !important;
+          top: unset !important;
+          left: 0 !important;
+          &:hover {
+            background-color: unset !important;
+            border: unset !important;
+          }
+        }
+      }
+    }
+  }
+  > .p-column-resizer-helper {
+    position: absolute !important;
+  }
+}
+
+/* DataTable end */
+
+.flex-wrap {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap !important;
+}
+
+.wrapper {
+    flex-grow: 1;   
+    display: flex;
+    width: 400px;
+}

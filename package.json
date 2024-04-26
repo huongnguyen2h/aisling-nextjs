@@ -71,6 +71,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-spring": "^9.6.1",
+    "sass": "^1.75.0",
     "shopify-buy": "^2.16.1",
     "stable": "^0.1.8",
     "theme-ui": "0.15.5",
