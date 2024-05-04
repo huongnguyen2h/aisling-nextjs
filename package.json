@@ -5,6 +5,7 @@
     "node": "18.14.0"
   },
   "scripts": {
+    "prestart": "nvm use 18.14.0",
     "dev": "next -p 8080",
     "build": "next build",
     "start": "next -p 8080",
@@ -62,7 +63,6 @@
     "@types/shopify-buy": "2.10.3",
     "@types/traverse": "0.6.32",
     "cheerio": "1.0.0-rc.12",
-    "isolated-vm": "^4.7.2",
     "js-cookie": "3.0.1",
     "next": "13.1.6",
     "next-seo": "5.15.0",

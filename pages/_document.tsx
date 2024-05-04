@@ -7,15 +7,15 @@ import Document, {
 } from 'next/document'
 import cheerio from 'cheerio'
 
-import { Builder } from '@builder.io/react';
-import ivm from 'isolated-vm'
+// import { Builder } from '@builder.io/react';
+// import ivm from 'isolated-vm'
 
 /**
  * Run content code bindings in SSR context
  */
-const isolate = new ivm.Isolate({ memoryLimit: 128 });
-const context = isolate.createContextSync();
-Builder.setServerContext(context);
+// const isolate = new ivm.Isolate({ memoryLimit: 128 });
+// const context = isolate.createContextSync();
+// Builder.setServerContext(context);
 
 /**
  * See this issue for more details https://github.com/emotion-js/emotion/issues/2040

@@ -1,6 +1,6 @@
-// import { FC } from 'react'
-// import type { AppProps } from 'next/app'
-// import Layout from '@components/common/Layout'
+import { FC } from 'react'
+import type { AppProps } from 'next/app'
+import Layout from '@components/common/Layout'
 // import { builder, Builder } from '@builder.io/react'
 // import builderConfig from '@config/builder'
 // builder.init(builderConfig.apiKey)
@@ -34,20 +34,20 @@
 //   items: [{ name: 'CloudinaryImage' }],
 // })
 
-// const Noop: FC<{ children: React.ReactNode }> = ({ children }) => (
-//   <>
-//   {children}
-//   </>
-// )
+const Noop: FC<{ children: React.ReactNode }> = ({ children }) => (
+  <>
+  {children}
+  </>
+)
 
-// export default function MyApp({ Component, pageProps }: AppProps) {
-//  // pageProps = ''
-//  console.log('_app pageProps: ', pageProps);
+export default function MyApp({ Component, pageProps }: AppProps) {
+ // pageProps = ''
+ console.log('_app pageProps: ', pageProps);
  
-//   return (
-//     <Layout pageProps={pageProps}>
-//      this is the about page
-//       {/* <Component {...pageProps} /> */}
-//     </Layout>
-//   )
-// }
+  return (
+    <Layout pageProps={pageProps}>
+     this is the about page
+      {/* <Component {...pageProps} /> */}
+    </Layout>
+  )
+}
