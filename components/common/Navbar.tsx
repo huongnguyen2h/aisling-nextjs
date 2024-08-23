@@ -20,11 +20,27 @@ const Navbar: FC = () => {
   const navbarService: any = NavbarService
 
   async function fetchNavbarLinks() {
-    const res = await NavbarService.getAllNavbarLinks()
-    console.log('res: ', res)
-    let data = await res.json()
-    console.log('data: ', data)
-		setNavigationLinks(data)
+    try {
+      const res = await NavbarService.getAllNavbarLinks()
+      console.log('res: ', res)
+      let data = await res?.json()
+      console.log('data: ', data)
+      setNavigationLinks(data)
+    } catch (error) {
+      setNavigationLinks([])
+    }
+  }
+
+  const getNavigationLinks = () => {
+    try {
+      return navigationLinks?.map((link: any, index: any) => (
+        <Link key={index} sx={{ padding: 10 }} href={link?.link || '//'} target={link?.target || ''}>
+          {link?.title}
+        </Link>
+      ))
+    } catch (error) {
+      return null
+    }
   }
 
   useEffect(() => {
@@ -74,11 +90,7 @@ const Navbar: FC = () => {
             justifyContent: 'space-evenly',
           }}
         >
-          {navigationLinks?.map((link: any, index: any) => (
-            <Link key={index} sx={{ padding: 10 }} href={link?.link || '//'} target={link?.target || ''}>
-              {link?.title}
-            </Link>
-          ))}
+          {getNavigationLinks()}
         </Box>
         <Box
           sx={{

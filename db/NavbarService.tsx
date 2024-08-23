@@ -17,9 +17,14 @@ import { environment } from 'environment/environment'
  */
 export class NavbarService {
   static async getAllNavbarLinks() {
-    const response = await fetch(`${environment.apiUrl}navbarLinks.json`, {
-      method: 'GET',
-    })
-    return response
+    try {
+      const response = await fetch(`${environment.apiUrl}navbarLinks.json`, {
+        method: 'GET',
+      })
+      console.log('getAllNavbarLinks: ', response);
+      return response
+    } catch (error) {
+      return null
+    }
   }
 }
