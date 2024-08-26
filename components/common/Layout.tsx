@@ -20,6 +20,17 @@ import NoSSR from './NoSSR'
 import ReactDOMServer from 'react-dom/server'
 
 import _ from 'lodash'
+
+// import { Metadata } from 'next';
+ 
+// const metadata: Metadata = {
+//   title: 'Acme Dashboard',
+//   description: 'The official Next.js Course Dashboard, built with App Router.',
+//   metadataBase: new URL('https://next-learn-dashboard.vercel.sh'),
+// };
+
+// export {metadata}
+
 // const _ = ''
 
 const FeatureBar = dynamic(() => import('@components/common/FeatureBar'), {
@@ -124,7 +135,9 @@ const InnerLayout: React.FC<{
   const { acceptedCookies, onAcceptCookies } = useAcceptCookies()
   return (
     <ThemeProvider theme={theme}>
-      <Navbar />
+      <div className='navbar-theme'>
+      <Navbar/>
+      </div>
       <div
         sx={{
           margin: `0 auto`,

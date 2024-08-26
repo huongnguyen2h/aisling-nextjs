@@ -145,10 +145,10 @@ const Navbar: FC = () => {
             justifyContent: ['space-between', 'flex-end'],
           }}
         >
-          <Searchbar />
-          <Button onClick={openSidebar} aria-label="Cart">
+          {/* <Searchbar /> */}
+          {/* <Button onClick={openSidebar} aria-label="Cart">
             <Bag />
-          </Button>
+          </Button> */}
         </Box>
       </Box>
     </React.Fragment>
