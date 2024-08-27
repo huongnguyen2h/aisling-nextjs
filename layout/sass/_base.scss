@@ -82,3 +82,13 @@ button:disabled {
 //     }
 
 // }
+
+* {
+  box-sizing: border-box;
+  -webkit-animation: popout 0.6s ease;
+  animation: popout 0.6s ease;
+}
+
+.navbar-theme{
+  position: sticky;
+}

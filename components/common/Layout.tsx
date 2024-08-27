@@ -54,7 +54,20 @@ const Layout: React.FC<{ pageProps: any; children: React.ReactNode }> = ({
           }
           const siteSettings = data?.siteSettings
           const colorOverrides = data?.colorOverrides
+          // const siteSeoInfo = data?.siteInformation
+          data.siteInformation = {
+            ...data?.siteInformation,
+            description: "A personal / blog website for a vtuber named AislingVT!",
+            openGraph: {
+              locale: "en_IE",
+              site_name: "Aisling's Planet",
+              type: "website",
+              url: "https://github.com/duyhung2h/aisling-nextjs"
+            },
+          }
           const siteSeoInfo = data?.siteInformation
+          console.log("data: ", data);
+          
           return (
             <ManagedUIContext key={data?.id} siteSettings={siteSettings}>
               <Head seoInfo={siteSeoInfo || seoConfig} />

@@ -80,23 +80,20 @@ const Navbar: FC = () => {
           justifyContent: 'space-between',
           alignItems: 'center',
           position: 'sticky',
+          width: '100%',
+          // flexDirection: 'column-reverse'
         }}
       >
         <Box
           sx={{
-            display: ['none', 'none', 'flex'],
-            flexBasis: 0,
-            minWidth: 240,
-            justifyContent: 'space-evenly',
-          }}
-        >
-          {getNavigationLinks()}
-        </Box>
-        <Box
-          sx={{
-            transform: 'translateX(-50%)',
-            left: '50%',
-            position: 'absolute',
+            // transform: 'translateX(-50%)',
+            // left: '50%',
+            width: 'auto',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            // flexGrow: 1,
+            flexShrink: 0,
           }}
         >
           <Heading
@@ -137,19 +134,34 @@ const Navbar: FC = () => {
             )}
           </Heading>
         </Box>
+        
         <Box
+          sx={{
+            display: ['none', 'none', 'flex'],
+            flexBasis: 0,
+            flexGrow: 1,
+            flexShrink: 0,
+            minWidth: '100%',
+            justifyContent: 'center',
+            width: '100%',
+          }}
+        >
+          {getNavigationLinks()}
+        </Box>
+        
+        {/* <Box
           sx={{
             display: 'flex',
             minWidth: 140,
             width: '100%',
             justifyContent: ['space-between', 'flex-end'],
           }}
-        >
+        > */}
           {/* <Searchbar /> */}
           {/* <Button onClick={openSidebar} aria-label="Cart">
             <Bag />
           </Button> */}
-        </Box>
+        {/* </Box> */}
       </Box>
     </React.Fragment>
   )
