@@ -1,27 +1,17 @@
-import React, { useState } from 'react'
-import { Document, Page } from 'react-pdf'
+import React, { useState } from 'react';
+
+import ReactPDF from '@react-pdf/renderer';
+import { MyDocument } from './MyDocument';
+import { PDFViewer } from '@react-pdf/renderer';
 
 function Resume() {
-  const [numPages, setNumPages] = useState(null)
-  const [pageNumber, setPageNumber] = useState(1)
-
-  function onDocumentLoadSuccess({ numPages }: any) {
-    setNumPages(numPages)
-  }
-
+  const [page, setPage] = useState(1);
+  
   return (
     <div>
-      <div>
-        {/* <Document
-          file="/assets/test.pdf"
-          onLoadSuccess={onDocumentLoadSuccess}
-        > */}
-        {/* <Page pageNumber={pageNumber} /> */}
-        {/* </Document> */}
-        <p>
-          Page {pageNumber} of {numPages}
-        </p>
-      </div>
+    <PDFViewer>
+      <MyDocument />
+    </PDFViewer>
       <embed
         src={'/assets/test.pdf'}
         style={{
@@ -175,4 +165,5 @@ function Resume() {
   )
 }
 
-export default Resume
+// ReactPDF.render(<MyDocument />, "public/assets/test.pdf");
+export default Resume;

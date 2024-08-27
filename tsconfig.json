@@ -21,7 +21,8 @@
       "@components/*": ["components/*"],
       "@utils/*": ["utils/*"]
     },
-    "incremental": true
+    "incremental": true,
+    "noImplicitAny": false
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.js"],
   "exclude": ["node_modules"]
