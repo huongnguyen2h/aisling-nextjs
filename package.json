@@ -2,10 +2,10 @@
   "name": "nextjs-shopify",
   "version": "1.0.0",
   "engines": {
-    "node": "18.14.0"
+    "node": "18.17.0"
   },
   "scripts": {
-    "prestart": "nvm use 18.14.0",
+    "prestart": "nvm use 18.17.0",
     "dev": "next -p 8080",
     "build": "next build",
     "start": "next -p 8080",
