@@ -30,7 +30,8 @@ module.exports = bundleAnalyzer({
     SHOPIFY_STOREFRONT_API_TOKEN: process.env.SHOPIFY_STOREFRONT_API_TOKEN,
     SHOPIFY_STORE_DOMAIN: process.env.SHOPIFY_STORE_DOMAIN,
     BUILDER_PUBLIC_KEY: process.env.BUILDER_PUBLIC_KEY,
-    IS_DEMO: process.env.IS_DEMO,
+    // IS_DEMO: process.env.IS_DEMO | 'true',
+    IS_DEMO: 'true',
   },
   i18n: {
     // These are all the locales you want to support in

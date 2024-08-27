@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 import ReactPDF from '@react-pdf/renderer';
-import { MyDocument } from './MyDocument';
+import { MyDocument } from '../../components/common/MyDocument';
 import { PDFViewer } from '@react-pdf/renderer';
 
 function Resume() {
