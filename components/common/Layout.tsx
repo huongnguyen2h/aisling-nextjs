@@ -148,9 +148,7 @@ const InnerLayout: React.FC<{
   const { acceptedCookies, onAcceptCookies } = useAcceptCookies()
   return (
     <ThemeProvider theme={theme}>
-      <div className='navbar-theme'>
       <Navbar/>
-      </div>
       <div
         sx={{
           margin: `0 auto`,

@@ -10,6 +10,7 @@ import Searchbar from './Searchbar'
 import Link from '@components/common/Link'
 import { Bag } from '@components/icons'
 import { NavbarService } from 'db/NavbarService'
+import styles from '/layout/sass/_footerAndNavbar.module.scss'
 
 const Navbar: FC = () => {
   const [announcement, setAnnouncement] = useState()
@@ -34,7 +35,12 @@ const Navbar: FC = () => {
   const getNavigationLinks = () => {
     try {
       return navigationLinks?.map((link: any, index: any) => (
-        <Link key={index} sx={{ padding: 10 }} href={link?.link || '//'} target={link?.target || ''}>
+        <Link
+          key={index}
+          sx={{ padding: 10 }}
+          href={link?.link || '//'}
+          target={link?.target || ''}
+        >
           {link?.title}
         </Link>
       ))
@@ -64,92 +70,93 @@ const Navbar: FC = () => {
 
   return (
     <React.Fragment>
-      {/* <BuilderComponent
+      <div className={styles.navbarTheme}>
+        {/* <BuilderComponent
         content={announcement}
         data={{ theme }}
         model="announcement-bar"
       /> */}
-      <Box
-        as="header"
-        sx={{
-          margin: `0 auto`,
-          maxWidth: 1920,
-          py: 2,
-          px: 2,
-          display: 'flex',
-          justifyContent: 'space-between',
-          alignItems: 'center',
-          position: 'sticky',
-          width: '100%',
-          // flexDirection: 'column-reverse'
-        }}
-      >
         <Box
+          as="header"
           sx={{
-            // transform: 'translateX(-50%)',
-            // left: '50%',
-            width: 'auto',
+            margin: `0 auto`,
+            maxWidth: 1920,
+            py: 2,
+            px: 2,
             display: 'flex',
-            alignItems: 'center',
             justifyContent: 'space-between',
-            // flexGrow: 1,
-            flexShrink: 0,
+            alignItems: 'center',
+            position: 'sticky',
+            width: '100%',
+            // flexDirection: 'column-reverse'
           }}
         >
-          <Heading
+          <Box
             sx={{
-              fontSize: 20,
-              fontWeight: 'bold',
+              // transform: 'translateX(-50%)',
+              // left: '50%',
+              width: 'auto',
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between',
+              // flexGrow: 1,
+              flexShrink: 0,
             }}
           >
-            {logo && logo.image && (
-              <Link
-                href="/"
-                sx={{
-                  letterSpacing: -1,
-                  textDecoration: `none`,
-                  paddingLeft: '5px',
-                }}
-              >
-                <Image
-                  alt="Logo"
-                  width={logo.width}
-                  height={logo.height}
-                  src={logo.image}
-                ></Image>
-              </Link>
-            )}
-            {logo && logo.text && !logo.image && (
-              <Link
-                href="/"
-                sx={{
-                  letterSpacing: -1,
-                  textDecoration: `none`,
-                  paddingLeft: '5px',
-                }}
-              >
-                {/* {logo.text} */}
-								♡【Henlo! This is Aisling's Planet!】♡
-              </Link>
-            )}
-          </Heading>
-        </Box>
-        
-        <Box
-          sx={{
-            display: ['none', 'none', 'flex'],
-            flexBasis: 0,
-            flexGrow: 1,
-            flexShrink: 0,
-            minWidth: '100%',
-            justifyContent: 'center',
-            width: '100%',
-          }}
-        >
-          {getNavigationLinks()}
-        </Box>
-        
-        {/* <Box
+            <Heading
+              sx={{
+                fontSize: 20,
+                fontWeight: 'bold',
+              }}
+            >
+              {logo && logo.image && (
+                <Link
+                  href="/"
+                  sx={{
+                    letterSpacing: -1,
+                    textDecoration: `none`,
+                    paddingLeft: '5px',
+                  }}
+                >
+                  <Image
+                    alt="Logo"
+                    width={logo.width}
+                    height={logo.height}
+                    src={logo.image}
+                  ></Image>
+                </Link>
+              )}
+              {logo && logo.text && !logo.image && (
+                <Link
+                  href="/"
+                  sx={{
+                    letterSpacing: -1,
+                    textDecoration: `none`,
+                    paddingLeft: '5px',
+                  }}
+                >
+                  {/* {logo.text} */}
+                  ♡【Henlo! This is Aisling's Planet!】♡
+                </Link>
+              )}
+            </Heading>
+          </Box>
+
+          <Box
+            sx={{
+              display: ['none', 'none', 'flex'],
+              flexBasis: 0,
+              flexGrow: 1,
+              flexShrink: 0,
+              minWidth: '100%',
+              justifyContent: 'center',
+              width: '100%',
+            }}
+          >
+            {getNavigationLinks()}
+          </Box>
+
+          {/* <Box
           sx={{
             display: 'flex',
             minWidth: 140,
@@ -161,8 +168,9 @@ const Navbar: FC = () => {
           {/* <Button onClick={openSidebar} aria-label="Cart">
             <Bag />
           </Button> */}
-        {/* </Box> */}
-      </Box>
+          {/* </Box> */}
+        </Box>
+      </div>
     </React.Fragment>
   )
 }
