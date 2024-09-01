@@ -15,7 +15,7 @@ function Resume() {
 		const container = containerRef.current || "";
 
 		if (typeof window !== 'undefined') {
-      import('pspdfkit').then((PSPDFKit) => {
+      import('pspdfkit').then((PSPDFKit: any) => {
 				if (PSPDFKit) {
 					PSPDFKit.unload(container);
 				}
