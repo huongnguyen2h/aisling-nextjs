@@ -1,17 +1,57 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 
 import ReactPDF from '@react-pdf/renderer';
 import { MyDocument } from '../../components/common/MyDocument';
 import { PDFViewer } from '@react-pdf/renderer';
+import dynamic from 'next/dynamic';
+// import PSPDFKit from 'pspdfkit';
 
 function Resume() {
   const [page, setPage] = useState(1);
   
+	const containerRef = useRef(null);
+
+	useEffect(() => {
+		const container = containerRef.current || "";
+
+		if (typeof window !== 'undefined') {
+      import('pspdfkit').then((PSPDFKit) => {
+				if (PSPDFKit) {
+					PSPDFKit.unload(container);
+				}
+
+				PSPDFKit.load({
+					container,
+					document: '/assets/resume.pdf',
+					baseUrl: `${window.location.protocol}//${window.location.host}/`,
+				});
+      });
+		}
+	}, []);
+
+	// const containerRef = (useRef < HTMLDivElement) || (null > null);
+
+	// useEffect(() => {
+	// 	const container = containerRef.current;
+
+	// 	if (container && typeof window !== 'undefined') {
+	// 		import('pspdfkit').then((PSPDFKit) => {
+	// 			if (PSPDFKit) {
+	// 				PSPDFKit.unload(container);
+	// 			}
+
+	// 			PSPDFKit.load({
+	// 				container,
+	// 				document: '/pspdfkit-web-demo.pdf',
+	// 				baseUrl: `${window.location.protocol}//${window.location.host}/`,
+	// 			});
+	// 		});
+	// 	}
+	// }, []);
+
   return (
     <div>
-    <PDFViewer>
-      <MyDocument />
-    </PDFViewer>
+      <div ref={containerRef} style={{ height: '100vh' }} />
       <embed
         src={'/assets/test.pdf'}
         style={{
@@ -165,5 +205,4 @@ function Resume() {
   )
 }
 
-// ReactPDF.render(<MyDocument />, "public/assets/test.pdf");
 export default Resume;
