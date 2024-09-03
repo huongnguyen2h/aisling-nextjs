@@ -8,10 +8,14 @@ import dynamic from 'next/dynamic';
 
 function Resume() {
   const [page, setPage] = useState(1);
-  
 	const containerRef = useRef(null);
 
-	useEffect(() => {
+  const getResume = async () => {
+    const params = new URLSearchParams(window.location.search);
+    const cvName = params.get('cv')
+
+    console.log("cvName: ", cvName);
+
 		const container = containerRef.current || "";
 
 		if (typeof window !== 'undefined') {
@@ -27,42 +31,17 @@ function Resume() {
 				});
       });
 		}
+    return <div ref={containerRef} style={{ height: '100vh' }} />
+  }
+
+	useEffect(() => {
+    getResume()
 	}, []);
-
-	// const containerRef = (useRef < HTMLDivElement) || (null > null);
-
-	// useEffect(() => {
-	// 	const container = containerRef.current;
-
-	// 	if (container && typeof window !== 'undefined') {
-	// 		import('pspdfkit').then((PSPDFKit) => {
-	// 			if (PSPDFKit) {
-	// 				PSPDFKit.unload(container);
-	// 			}
-
-	// 			PSPDFKit.load({
-	// 				container,
-	// 				document: '/pspdfkit-web-demo.pdf',
-	// 				baseUrl: `${window.location.protocol}//${window.location.host}/`,
-	// 			});
-	// 		});
-	// 	}
-	// }, []);
 
   return (
     <div>
       <div ref={containerRef} style={{ height: '100vh' }} />
-      <embed
-        src={'/assets/test.pdf'}
-        style={{
-          width: '100%',
-          height: '100%',
-          flexGrow: '0',
-          flexShrink: '1',
-        }}
-        type="application/pdf"
-      />
-      <object
+      {/* <object
         data="/assets/test.pdf"
         type="application/pdf"
         width="100%"
@@ -72,7 +51,7 @@ function Resume() {
           Alternative text - include a link{' '}
           <a href="/assets/resume.pdf">to the PDF!</a>
         </p>
-      </object>
+      </object> */}
       Contrary to popular belief, Lorem Ipsum is not simply random text. It has
       roots in a piece of classical Latin literature from 45 BC, making it over
       2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney
