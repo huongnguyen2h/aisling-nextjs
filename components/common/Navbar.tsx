@@ -136,7 +136,7 @@ const Navbar: FC = () => {
                   }}
                 >
                   {/* {logo.text} */}
-                  ♡【Henlo! This is Aisling's Planet!】♡
+                  ♡【Henlo! This is Aisling's Planet!】♡ (This is a WIP website!)
                 </Link>
               )}
             </Heading>
