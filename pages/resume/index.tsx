@@ -12,7 +12,10 @@ function Resume() {
 
   const getResume = async () => {
     const params = new URLSearchParams(window.location.search);
-    const cvName = params.get('cv')
+    let cvName = params.get('cv')
+    if (!cvName) {
+      cvName = "L"
+    }
 
     console.log("cvName: ", cvName);
 
@@ -26,7 +29,7 @@ function Resume() {
 
 				PSPDFKit.load({
 					container,
-					document: '/assets/resume.pdf',
+					document: '/assets/cv_' + cvName + '.pdf',
 					baseUrl: `${window.location.protocol}//${window.location.host}/`,
 				});
       });
