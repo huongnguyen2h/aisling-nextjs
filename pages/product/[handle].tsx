@@ -75,12 +75,14 @@ export default function Handle({
   return router.isFallback && isLive ? (
     <h1>Loading...</h1>
   ) : (
-    <BuilderComponent
+    <>
+    {/* <BuilderComponent
       key={product!.id}
       model={builderModel}
       options={{ enrich: true }}
       data={{ product, theme }}
       content={page}
-    />
+    /> */}
+    </>
   )
 }

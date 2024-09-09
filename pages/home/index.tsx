@@ -1,6 +1,8 @@
 import { FC } from 'react'
 import type { AppProps } from 'next/app'
 import Layout from '@components/common/Layout'
+import Head from 'next/head'
+import _const from '@components/common/const'
 // import { builder, Builder } from '@builder.io/react'
 // import builderConfig from '@config/builder'
 // builder.init(builderConfig.apiKey)
@@ -35,18 +37,21 @@ import Layout from '@components/common/Layout'
 // })
 
 const Noop: FC<{ children: React.ReactNode }> = ({ children }) => (
-  <>
-  {children}
-  </>
+  <>{children}</>
 )
 
 export default function MyApp({ Component, pageProps }: AppProps) {
- // pageProps = ''
- console.log('_app pageProps: ', pageProps);
- 
+  // pageProps = ''
+  console.log('_app pageProps: ', pageProps)
+
   return (
     <Layout pageProps={pageProps}>
-     this is the about page
+      <Head>
+        <title>
+          {_const.WEB_TITLE} - {_const.PAGE?.HOME}
+        </title>
+      </Head>
+      this is the homepage
       {/* <Component {...pageProps} /> */}
     </Layout>
   )

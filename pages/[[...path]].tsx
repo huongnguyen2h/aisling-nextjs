@@ -70,10 +70,10 @@ export default function Path({
   if (!page && !isPreviewing) {
     return (
       <>
-        <Head>
+        {/* <Head>
           <meta name="robots" content="noindex" />
           <meta name="title"></meta>
-        </Head>
+        </Head> */}
         {Builder.isBrowser && <DefaultErrorPage statusCode={404} />}
       </>
     )
