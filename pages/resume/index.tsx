@@ -4,6 +4,8 @@ import ReactPDF from '@react-pdf/renderer';
 import { MyDocument } from '../../components/common/MyDocument';
 import { PDFViewer } from '@react-pdf/renderer';
 import dynamic from 'next/dynamic';
+import Head from 'next/head'
+
 // import PSPDFKit from 'pspdfkit';
 
 function Resume() {
@@ -43,6 +45,10 @@ function Resume() {
 
   return (
     <div>
+      <Head>
+        <title>Resume page</title>
+        <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+      </Head>
       <div ref={containerRef} style={{ height: '100vh' }} />
     </div>
   )

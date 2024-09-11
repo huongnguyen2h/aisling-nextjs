@@ -3,6 +3,7 @@ import type { AppProps } from 'next/app'
 import Layout from '@components/common/Layout'
 import { builder, Builder } from '@builder.io/react'
 import builderConfig from '@config/builder'
+import Head from 'next/head'
 builder.init(builderConfig.apiKey)
 
 import '@builder.io/widgets'
