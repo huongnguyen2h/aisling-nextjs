@@ -34,7 +34,7 @@ function Resume() {
 				});
       });
 		}
-    return <div ref={containerRef} style={{ height: '100vh' }} />
+    // return <div ref={containerRef} style={{ height: '100vh' }} />
   }
 
 	useEffect(() => {
