@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import NextHead from 'next/head'
 import { DefaultSeo } from 'next-seo'
-import _const from 'components/common/const'
+import _const from 'components/common/Const.js'
 
 const Head: FC<{ seoInfo: any }> = (props) => {
   return (
