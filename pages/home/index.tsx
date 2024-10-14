@@ -2,7 +2,7 @@ import { FC } from 'react'
 import type { AppProps } from 'next/app'
 import Layout from '@components/common/Layout'
 import Head from 'next/head'
-import _const from '@components/common/const'
+// import _const from '@components/common/const'
 // import { builder, Builder } from '@builder.io/react'
 // import builderConfig from '@config/builder'
 // builder.init(builderConfig.apiKey)
@@ -43,12 +43,14 @@ const Noop: FC<{ children: React.ReactNode }> = ({ children }) => (
 export default function MyApp({ Component, pageProps }: AppProps) {
   // pageProps = ''
   console.log('_app pageProps: ', pageProps)
+  let WEB_TITLE = "Aisling's Planet"
+  let HOME = `Home`
 
   return (
     <Layout pageProps={pageProps}>
       <Head>
         <title>
-          {_const.WEB_TITLE} - {_const.PAGE?.HOME}
+          {WEB_TITLE} - {HOME}
         </title>
       </Head>
       this is the homepage

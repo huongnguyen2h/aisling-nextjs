@@ -1,9 +1,10 @@
 import { FC } from 'react'
 import NextHead from 'next/head'
 import { DefaultSeo } from 'next-seo'
-import _const from 'components/common/Const.js'
+// import _const from 'components/common/Const.js'
 
 const Head: FC<{ seoInfo: any }> = (props) => {
+  let WEB_TITLE = "Aisling's Planet"
   return (
     <>
       <DefaultSeo {...props.seoInfo} />
@@ -15,7 +16,7 @@ const Head: FC<{ seoInfo: any }> = (props) => {
           type="image/png"
           href="https://cdn.builder.io/api/v1/image/assets%2FYJIGb4i01jvw0SRdL5Bt%2F2d86a5bb30f44d2db3564aa2962bb093"
         />
-        <title>{_const.WEB_TITLE}</title>
+        <title>{WEB_TITLE}</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </NextHead>
     </>
