@@ -49,7 +49,7 @@ function About() {
         <title>About page</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
-      <div ref={containerRef} style={{ height: '100vh' }} />
+      {/* <div ref={containerRef} style={{ height: '100vh' }} /> */}
     </div>
   )
 }
