@@ -14,7 +14,7 @@ function Resume() {
 
   const getResume = async () => {
     const params = new URLSearchParams(window.location.search);
-    let cvName = params.get('cv')
+    let cvName = params.get('cv')?.toLowerCase()
     if (!cvName) {
       cvName = "L"
     }
