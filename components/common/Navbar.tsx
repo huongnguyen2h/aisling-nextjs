@@ -140,6 +140,7 @@ const Navbar: FC = () => {
                       textDecoration: `none`,
                       paddingLeft: '5px',
                     }}
+                    className=''
                   >
                     {/* {logo.text} */}
                     ♡【Henlo! This is Aisling's Planet!】♡ (This is a WIP
