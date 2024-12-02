@@ -140,7 +140,7 @@ const Navbar: FC = () => {
                       textDecoration: `none`,
                       paddingLeft: '5px',
                     }}
-                    className=''
+                    className={styles.navbarTitleLeft}
                   >
                     {/* {logo.text} */}
                     ♡【Henlo! This is Aisling's Planet!】♡ (This is a WIP
@@ -152,14 +152,14 @@ const Navbar: FC = () => {
 
             <Box
               sx={{
-                display: ['none', 'none', 'flex'],
+                display: ['flex', 'flex', 'flex'],
                 flexBasis: 0,
                 flexGrow: 1,
                 flexShrink: 0,
-                minWidth: '100%',
-                justifyContent: 'center',
-                width: '100%',
+                justifyContent: 'flex-end',
+                width: '100%'
               }}
+              className={styles.navbarNavigationLinks}
             >
               {getNavigationLinks()}
             </Box>
