@@ -23,7 +23,7 @@ function About() {
       </Head>
       {/* <div ref={containerRef} style={{ height: '100vh' }} /> */}
       <div className='w-100'>
-        <img className='w-100 flex-100' src="/assets/profile_banner.jpg" alt="banner image"></img>
+        <img className='w-100 flex-100' src="/assets/profile_banner_censored.jpg" alt="banner image"></img>
       </div>
       click here to see my CV! (cv does not have name in it)
     </div>
