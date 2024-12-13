@@ -13,6 +13,7 @@ import '../blocks/ProductView/ProductView.builder'
 import '../blocks/CloudinaryImage/CloudinaryImage.builder'
 
 import '/layout/layout.scss'
+import "bootstrap/dist/css/bootstrap.min.css";
 
 Builder.register('insertMenu', {
   name: 'Shopify Collections Components',

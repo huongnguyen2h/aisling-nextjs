@@ -24,6 +24,7 @@ import { getLayoutProps } from '@lib/get-layout-props'
 import { useAddItemToCart } from '@lib/shopify/storefront-data-hooks'
 import { useUI } from '@components/common/context'
 import Link from '@components/common/Link'
+import { useEffect } from 'react'
 
 const isProduction = process.env.NODE_ENV === 'production'
 
@@ -54,6 +55,7 @@ export async function getStaticPaths({ locales }: GetStaticPathsContext) {
   }
 }
 
+
 export default function Path({
   page,
   locale,
@@ -63,6 +65,12 @@ export default function Path({
   const addToCart = useAddItemToCart()
   const isPreviewing = useIsPreviewing()
   const { openSidebar } = useUI()
+
+  useEffect(() => {
+    // alert()
+    window.location.replace("/about");
+  }, )
+
   if (router.isFallback) {
     return <h1>Loading...</h1>
   }
