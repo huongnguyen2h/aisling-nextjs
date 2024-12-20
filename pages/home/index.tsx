@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, useEffect } from 'react'
 import type { AppProps } from 'next/app'
 import Layout from '@components/common/Layout'
 import Head from 'next/head'
@@ -42,6 +42,7 @@ const Noop: FC<{ children: React.ReactNode }> = ({ children }) => (
 
 export default function MyApp({ Component, pageProps }: AppProps) {
   // pageProps = ''
+
   console.log('_app pageProps: ', pageProps)
   let WEB_TITLE = "Aisling's Planet"
   let HOME = `Home`

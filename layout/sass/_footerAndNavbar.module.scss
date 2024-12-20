@@ -1,4 +1,5 @@
 @import 'layout/scssVariables/_variables.scss';
+@import 'layout/sass/_mixins.scss';
 
 // .layout-footer {
 //     font-family: $default-font !important;
@@ -69,4 +70,45 @@
   position: sticky;
   background-color: $primary-color-bg;
   color: $primary-color;
+}
+
+.navbarTitleLeft {
+  // color: aqua !important;
+  // font-size: 20px !important;
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  @include combineBreakPointUnit(
+    font-size,
+    !important,
+    $navbarTitleSize1,
+    $navbarTitleSize2,
+    $navbarTitleSize3,
+    $navbarTitleSize4,
+    $navbarTitleSize5,
+    $navbarTitleSize6
+  );
+  @include combineBreakPointUnit(width, !important, 0, 0, 0, auto, auto, auto);
+}
+.navbarNavigationLinks {
+  @include combineBreakPointUnit(
+    justify-content,
+    !important,
+    center,
+    center,
+    center,
+    flex-end,
+    flex-end,
+    flex-end
+  );
+  @include combineBreakPointUnit(
+    font-size,
+    !important,
+    $navbarItemSize1,
+    $navbarItemSize2,
+    $navbarItemSize3,
+    $navbarItemSize4,
+    $navbarItemSize5,
+    $navbarItemSize6
+  );
 }

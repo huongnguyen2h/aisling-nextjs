@@ -1,9 +1,9 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef } from 'react'
 
-import ReactPDF from '@react-pdf/renderer';
-import { MyDocument } from '../../components/common/MyDocument';
-import { PDFViewer } from '@react-pdf/renderer';
-import dynamic from 'next/dynamic';
+import ReactPDF from '@react-pdf/renderer'
+import { MyDocument } from '../../components/common/MyDocument'
+import { PDFViewer } from '@react-pdf/renderer'
+import dynamic from 'next/dynamic'
 import Head from 'next/head'
 
 // import PSPDFKit from 'pspdfkit';
@@ -150,6 +150,8 @@ function About() {
     foo4()
 	}, []);
 
+  useEffect(() => {}, [])
+
   return (
     <div>
       <Head>
@@ -158,8 +160,12 @@ function About() {
       </Head>
       {result}
       {/* <div ref={containerRef} style={{ height: '100vh' }} /> */}
+      <div className='w-100'>
+        <img className='w-100 flex-100' src="/assets/profile_banner_censored.jpg" alt="banner image"></img>
+      </div>
+      click here to see my CV! (cv does not have name in it)
     </div>
   )
 }
 
-export default About;
+export default About
