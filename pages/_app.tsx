@@ -49,10 +49,8 @@ export default function MyApp({ Component, pageProps }: AppProps) {
  console.log('_app pageProps: ', pageProps);
  
   return (
-    <div>
-      {/* <Layout pageProps={pageProps}>
-        <Component {...pageProps} />
-      </Layout> */}
-    </div>
+    <Layout pageProps={pageProps}>
+      <Component {...pageProps} />
+    </Layout>
   )
 }
