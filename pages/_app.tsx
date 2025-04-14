@@ -7,12 +7,9 @@ import Head from 'next/head'
 builder.init(builderConfig.apiKey)
 
 import '@builder.io/widgets'
-import '../blocks/ProductGrid/ProductGrid.builder'
-import '../blocks/CollectionView/CollectionView.builder'
-import '../blocks/ProductView/ProductView.builder'
-import '../blocks/CloudinaryImage/CloudinaryImage.builder'
 
 import '/layout/layout.scss'
+import '/layout/globals.css'
 import "bootstrap/dist/css/bootstrap.min.css";
 
 Builder.register('insertMenu', {
