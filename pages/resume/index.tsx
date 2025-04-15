@@ -9,7 +9,7 @@ import Head from 'next/head'
 // import PSPDFKit from 'pspdfkit';
 
 function Resume() {
-  const [cvName, setCvName] = useState('L');
+  const [cvName, setCvName] = useState('huong');
 	const containerRef = useRef(null);
 
   const getResume = async (cv: string) => {

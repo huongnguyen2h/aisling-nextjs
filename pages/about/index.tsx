@@ -5,7 +5,10 @@ import { MyDocument } from '../../components/common/MyDocument'
 import { PDFViewer } from '@react-pdf/renderer'
 import dynamic from 'next/dynamic'
 import Head from 'next/head'
-
+import { Label } from '@lib/components/ui/label'
+import { Input } from '@lib/components/ui/input'
+import { Button } from '@lib/components/ui/button'
+import { Textarea } from '@lib/components/ui/textarea'
 // import PSPDFKit from 'pspdfkit';
 
 function About() {
@@ -164,6 +167,14 @@ function About() {
         <img className='w-100 flex-100' src="/assets/profile_banner.jpg" alt="banner image"></img>
       </div>
       click here to see my CV! (cv does not have name in it)
+      <div className='d-flex flex-column gap-4 align-items-start w-100'>
+        <Label className='text-2xl font-bold'>Want to contact me?</Label>
+        <Label className='text-sm'>Leave me a message and i will contact you as soon as possible!</Label>
+        <Input className='w-100' type="email" placeholder="Email"/>
+        <Input className='w-100' type="text" placeholder="Name" />
+        <Textarea className='w-100' placeholder="Message" />
+        <Button className='w-100'>Send</Button>
+      </div>
     </div>
   )
 }
