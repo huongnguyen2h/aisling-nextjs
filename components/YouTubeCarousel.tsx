@@ -1,3 +1,5 @@
+"use client"
+
 import { useEffect, useState } from 'react';
 import {
   Carousel,
@@ -5,8 +7,8 @@ import {
   CarouselItem,
   CarouselNext,
   CarouselPrevious,
-} from "@/lib/components/ui/carousel";
-import { Card, CardContent } from "@/lib/components/ui/card";
+} from "@lib/components/ui/carousel";
+import { Card, CardContent } from "@lib/components/ui/card";
 
 interface YouTubeVideo {
   id: string;

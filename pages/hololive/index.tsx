@@ -1,10 +1,23 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Head from 'next/head'
 import Link from '@components/common/Link'
 import styles from '../../layout/sass/_hololive.module.scss'
-import { Editor } from 'lib/components/ui/editor'
+import Editor from '@lib/components/ui/editor/editor'
+import EditorReact from 'lib/components/ui/editor/editorReact'
+import { useEffect } from 'react';
 
 function Hololive() {
+
+  const [editor, setEditor] = useState<any>(null);
+
+  useEffect(() => {
+    console.log("editor");
+    console.log(<Editor />);
+    
+    // window is accessible here.
+    setEditor(<Editor />);
+  }, []);
+
   return (
     <div className={styles.hololiveContainer}>
       <Head>
@@ -12,8 +25,9 @@ function Hololive() {
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
 
-      <Editor />
-      
+      {editor}
+
+      <EditorReact />
       <div className={styles.talentHeader}>
         <div className={styles.talentImages}>
           {[1, 2, 3, 4, 5, 6, 7, 8, 9].map((num) => (
