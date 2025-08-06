@@ -6,7 +6,7 @@ import { useCart } from '@lib/shopify/storefront-data-hooks'
 import { jsx, Box, useThemeUI, Heading, Button } from 'theme-ui'
 import { useUI } from '@components/common/context'
 import Image from 'next/legacy/image'
-import Searchbar from './Searchbar'
+import Searchbar from '../Searchbar'
 import Link from '@components/common/Link'
 import { Bag } from '@components/icons'
 import { NavbarService } from 'db/NavbarService'
@@ -50,28 +50,12 @@ const Navbar: FC = () => {
   }
 
   useEffect(() => {
-    // async function fetchContent() {
-    //   const items = cart?.lineItems || []
-    //   const anouncementContent = await builder
-    //     .get('announcement-bar', {
-    //       cacheSeconds: 120,
-    //       userAttributes: {
-    //         itemInCart: items.map((item: any) => item.variant.product.handle),
-    //       } as any,
-    //     })
-    //     .toPromise()
-    //   setAnnouncement(anouncementContent)
-    // }
-    // fetchContent()
     fetchNavbarLinks()
   }, [cart?.lineItems])
 
   console.log('navigationLinks: ', navigationLinks)
   const params = new URLSearchParams(window.location.search)
   let cvName = params.get('cv')
-  // if (!cvName) {
-  //   cvName = "L"
-  // }
 
   return (
     <React.Fragment>

@@ -9,17 +9,11 @@ import Head from 'next/head'
 // import PSPDFKit from 'pspdfkit';
 
 function Resume() {
-  const [page, setPage] = useState(1);
+  const [cvName, setCvName] = useState('huong');
 	const containerRef = useRef(null);
 
-  const getResume = async () => {
-    const params = new URLSearchParams(window.location.search);
-    let cvName = params.get('cv')?.toLowerCase()
-    if (!cvName) {
-      cvName = "L"
-    }
-
-    console.log("cvName: ", cvName);
+  const getResume = async (cv: string) => {
+    console.log("cvName: ", cv);
 
 		const container = containerRef.current || "";
 
@@ -31,7 +25,7 @@ function Resume() {
 
 				PSPDFKit.load({
 					container,
-					document: '/assets/cv_' + cvName + '.pdf',
+					document: '/assets/cv_' + cv + '.pdf',
 					baseUrl: `${window.location.protocol}//${window.location.host}/`,
 				});
       });
@@ -40,8 +34,16 @@ function Resume() {
   }
 
 	useEffect(() => {
-    getResume()
-	}, []);
+    getResume(cvName)
+	}, [cvName]);
+
+  const handleCvChange = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const selectedCv = event.target.value;
+    setCvName(selectedCv);
+    const params = new URLSearchParams(window.location.search);
+    params.set('cv', selectedCv);
+    window.history.replaceState({}, '', `${window.location.pathname}?${params.toString()}`);
+  };
 
   return (
     <div>
@@ -49,6 +51,13 @@ function Resume() {
         <title>Resume page</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       </Head>
+      <div style={{ marginBottom: '20px' }}>
+        <label htmlFor="cvSelect">Select Resume: </label>
+        <select id="cvSelect" value={cvName} onChange={handleCvChange}>
+          <option value="Huong">Resume Huong (English)</option>
+          <option value="Huong-vi">Resume Huong (Vietnamese)</option>
+        </select>
+      </div>
       <div ref={containerRef} style={{ height: '100vh' }} />
     </div>
   )

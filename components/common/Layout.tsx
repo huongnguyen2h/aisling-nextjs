@@ -6,10 +6,9 @@ import dynamic from 'next/dynamic'
 import { Button } from 'theme-ui'
 import { ManagedUIContext, useUI } from '@components/common/context'
 import Head from '@components/common/Head'
-import Navbar from '@components/common/Navbar'
+import Navbar from '@components/common/navbar/Navbar'
 import { useAcceptCookies } from '@lib/hooks/useAcceptCookies'
 import Sidebar from '@components/common/Sidebar'
-import { CartSidebarView } from '@components/cart'
 import { CommerceProvider } from '@lib/shopify/storefront-data-hooks'
 import shopifyConfig from '@config/shopify'
 import { builder, BuilderContent, Builder } from '@builder.io/react'
@@ -20,9 +19,10 @@ import NoSSR from './NoSSR'
 import ReactDOMServer from 'react-dom/server'
 
 import _ from 'lodash'
+import { NavigationMenuDemo } from './navbar/newNavbar'
 
 // import { Metadata } from 'next';
- 
+
 // const metadata: Metadata = {
 //   title: 'Acme Dashboard',
 //   description: 'The official Next.js Course Dashboard, built with App Router.',
@@ -57,17 +57,18 @@ const Layout: React.FC<{ pageProps: any; children: React.ReactNode }> = ({
           // const siteSeoInfo = data?.siteInformation
           data.siteInformation = {
             ...data?.siteInformation,
-            description: "A personal / blog website for a vtuber named AislingVT!",
+            description:
+              'A personal / blog website for a vtuber named AislingVT!',
             openGraph: {
-              locale: "en_IE",
+              locale: 'en_IE',
               site_name: "Aisling's Planet",
-              type: "website",
-              url: "https://github.com/duyhung2h/aisling-nextjs"
+              type: 'website',
+              url: 'https://github.com/duyhung2h/aisling-nextjs',
             },
           }
           const siteSeoInfo = data?.siteInformation
-          console.log("data: ", data);
-          
+          console.log('data: ', data)
+
           return (
             <ManagedUIContext key={data?.id} siteSettings={siteSettings}>
               <Head seoInfo={siteSeoInfo || seoConfig} />
@@ -118,21 +119,11 @@ const InnerLayout: React.FC<{
       },
       [children]
     )
-    // const childrenElement = (<div></div>)
     console.log('childrenElement: ', childrenElement)
-
-    // RenderedChildren = ReactDOMServer.renderToString(
-    //   _.cloneDeep(childrenElement.props.children[0])
-    // )
     console.log('InnerLayout children: ', RenderedChildren)
     RenderedChildren = (
       <ChildElement>{childrenElement.props.children[0]}</ChildElement>
     )
-    // const RenderedChildren = ReactDOMServer.renderToString(
-    //   <>
-    //     <ChildElement>{children}</ChildElement>
-    //   </>
-    // )
   } catch (error) {
     console.log(error)
     RenderedChildren = <>dicks</>
@@ -148,7 +139,10 @@ const InnerLayout: React.FC<{
   const { acceptedCookies, onAcceptCookies } = useAcceptCookies()
   return (
     <ThemeProvider theme={theme}>
-      <Navbar/>
+      <Navbar />
+      {/* <div>
+        <NavigationMenuDemo />
+      </div> */}
       <div
         sx={{
           margin: `0 auto`,
@@ -158,31 +152,8 @@ const InnerLayout: React.FC<{
           minHeight: 800,
         }}
       >
-        {/* <iframe
-          width="1045"
-          height="588"
-          src="https://www.youtube.com/embed/Frejv8ydgEQ?autoplay=1&loop=1"
-          // src="https://www.youtube.com/embed/CjICgm2aT9o?list=PLWZyHUkTtlKz4CUUbX24vSpsACmx8I-0v&autoplay=1&loop=1"
-          title="🔴 I&#39;M COLLABING WITH FAMOUS EU4 YOUTUBERS!  ⸜(｡˃ ᵕ ˂ )⸝♡ 【EU4 Live Multiplayer】"
-          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-          referrerPolicy="strict-origin-when-cross-origin"
-          allowFullScreen
-        ></iframe> */}
         {RenderedChildren}
-        {/* <RenderedChildren></RenderedChildren> */}
-        {/* <main>{children}</main> */}
       </div>
-
-      <Sidebar
-        open={
-          displaySidebar ||
-          (builder.editingModel || Builder.previewingModel) ===
-            'cart-upsell-sidebar'
-        }
-        onClose={closeSidebar}
-      >
-        <CartSidebarView />
-      </Sidebar>
       <NoSSR>
         <FeatureBar
           title="This site uses cookies to improve your experience. By clicking, you agree to our Privacy Policy."
